@@ -1,4 +1,4 @@
-/* ##### Slide página inicial  ####### /
+/* ##### Slide página inicial  ####### */
 let slideIndex = 1;
 showSlides(slideIndex);
 

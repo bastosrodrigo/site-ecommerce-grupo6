@@ -243,8 +243,18 @@ opacity:1;
 }
 
 /* cor azul nos links */
-a {
+.form a {
+background-color: white;
+border-radius: 7px;
+padding: 2px;
 color: dodgerblue;
+}
+
+.login-p a{
+  background-color: white;
+  border-radius: 7px;
+  padding: 2px;
+  color: dodgerblue;
 }
 
 
@@ -359,7 +369,7 @@ margin-right: 20%;
 margin-bottom: 5%;
 }
 
-#nome, #cpf, #senha, #repetir-senha, #cep, #bairro, #localidade, #uf .btnRegistrar{
+#nome, #cpf, #senha, #repetir-senha, #cep, #bairro, #localidade, #uf, .btnRegistrar{
 border-radius: 10px;
 }
 
