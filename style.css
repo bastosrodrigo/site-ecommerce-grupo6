@@ -37,6 +37,24 @@ li a{
   color: #f2f2f2;
 }
 
+.login {
+  list-style-type: none;
+}
+.login img{
+  height: 18px;
+  width: 18px;
+}
+.login a{
+  margin: 15px;
+  font-size: 18px;
+  color: #f2f2f2;
+}
+.login i{
+  font-size: 18px;
+  color: #f2f2f2;
+}
+
+
 #barraPreta {
     height: 25px;
     background-color: black;

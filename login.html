@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="shortcut icon" href="./src/logo-fanaticos.png" type="image/x-icon" />
     <script src="./cadastro.js" defer></script>
-    <title>Masculino | FãNáticos</title>
+    <title>Acessar sua conta | FãNáticos</title>
 </head>
 <body>
     <div id="container">
@@ -23,6 +24,10 @@
                 <li><a href="#">Infantil</a></li>
                 <li><a href="#">Rastrear Pedido</a></li>
             </ul>
+            <ul class="login">
+                <li><i class='bx bxs-user-circle' ></i></a><a href="./login.html">Login</a></li>
+                <li><i class='bx bxs-user-plus' ></i><a href="./cadastro.html">Criar Conta</a></li>
+            </ul>
             <div id="divBusca">
                 <input type="text" id="txtBusca" placeholder="Buscar..."/>
                 <img src="./src/lupa.png" id="btnBusca" alt="Buscar"/>
@@ -30,39 +35,6 @@
         </header>
         <div id="barraPreta">
         </div>
-
-        <!-- Início do Slide-->
-        <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-                <img src="./src/img1.png" style="width:100%">
-                    <div class="text">Imagem 1</div>
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-                <img src="./src/img2.png" style="width:100%">
-                    <div class="text">Imagem 2</div>
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-                <img src="./src/img3.png" style="width:100%">
-                    <div class="text">Imagem 3</div>
-        </div>
-  
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-        <!--fim do Slide-->
-        <hr>
         <!--Início do Login-->
         <section class="conteudo-central">
             <div id="conteudo-login">
@@ -72,7 +44,7 @@
                 <input type="text" maxlength="11" id="cpf" placeholder="Digite o cpf (números)" required />
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" placeholder="Digite a senha" required />
-                <button id="btnLogin" onclick="validarUsuario()">Enviar</button>
+                <button id="btnLogin" onclick="validarUsuario()">Continuar</button>
 
             </div>
 

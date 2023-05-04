@@ -312,3 +312,73 @@ li a{
   width: 180px;
   height: 40px;
   background-color: rgb(105, 174, 224); } /* MUDAR ESSAS CORES DE FUNDO*/
+/*-----------------------------MENU LOGIN E SENHA-----------------------------*/
+.login {
+    list-style-type: none;
+}
+.login img{
+    height: 18px;
+    width: 18px;
+}
+.login a{
+    margin: 15px;
+    font-size: 18px;
+    color: #f2f2f2;
+}
+.login i{
+    font-size: 18px;
+    color: #f2f2f2;
+}
+
+
+.conteudo-central {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+/*-----------------------------LOGiN-----------------------------*/
+#conteudo-login {
+  background-color: rgb(150, 135, 236);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.conteudo-central #cpf , #senha {
+  border-radius: 10px;
+}
+.conteudo-central h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.conteudo-central #btnLogin {
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  justify-content: center;
+}
+
+/*-----------------------------CADASTRO-----------------------------*/
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: rgb(150, 135, 236);
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+}
+
+.form #nome, #senha-repetir, #cpf, #cep, #bairro, #localidade, #uf, .btnRegistrar{
+  border-radius: 10px;
+}
+
+.formulario form {
+  justify-content: center;
+}
