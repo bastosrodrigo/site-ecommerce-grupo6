@@ -376,3 +376,14 @@ border-radius: 10px;
 .formulario form {
 justify-content: center;
 }
+
+#logado {
+  font-size: 10px;
+}
+
+.bem-vindo {
+  display: flex;
+}
+#logoutBtn {
+  margin-left: 20px;
+}

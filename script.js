@@ -27,7 +27,7 @@ function showSlides(n) {
 }
 
 
-/ #### javascript da loja #### */
+/* #### javascript da loja #### */
 // Pega as informações da localStorage
 document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
 
@@ -37,14 +37,25 @@ function checaUsuarioLogado() { // checa se usuario está logado quando abre, se
 
 // checar usuario logado
 if (checaUsuarioLogado()) {
-  // se sim, remove o "display: none" da div "logado"
+  // remove "display: none" da div logado
   document.getElementById("logado").setAttribute("style", "display:flex")
-  // e coloque o nome do usuário no elemento "nomeCliente"
+  //  coloca nome do usuário no elemento "nomeCliente"
   document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
+
+  // esconde botões "Login" e Criar conta
+  document.querySelector('a[href="./login.html"]').style.display = "none";
+  document.querySelector('a[href="./cadastro.html"]').style.display = "none";
+  // esconde as imagens
+  document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
+  document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
 } else {
-  // se não, adiciona o estilo "display: none" para o div Logado
+  // adiciona o estilo "display: none" para o div Logado, mostra botão login e Criar conta
   document.querySelector('.logado').style.display = "none";
-  document.getElementById("logoutBtn").style.display = "none";
+  document.querySelector('a[href="./login.html"]').style.display = "block";
+  document.querySelector('a[href="./cadastro.html"]').style.display = "block";
+  // mostra a imagem do botão "Login" e Criar conta
+  document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
+  document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
 }
 
 // função para limpar a sessionStora e redireciona para o login

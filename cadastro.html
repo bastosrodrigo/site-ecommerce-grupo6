@@ -18,17 +18,23 @@
 <body>
     <div id="container">
         <header>
-            <a href="#" class="logo"><img src="./src/logo-fanaticos.png" alt=""></a>
+            <a href="./index.html" class="logo"><img src="./src/logo-fanaticos.png" alt=""></a>
             <ul class="menuprincipal">
                 <li><a href="./index.html">Início</a></li>
                 <li><a href="./masculino.html">Masculino</a></li>
-                <li><a href="#">Feminino</a></li>
-                <li><a href="#">Infantil</a></li>
-                <li><a href="#">Rastrear Pedido</a></li>
+                <li><a href="./feminino.html">Feminino</a></li>
+                <li><a href="./index.html">Infantil</a></li>
             </ul>
             <ul class="login">
-                <li><i class='bx bxs-user-circle' ></i></a><a href="./login.html">Login</a></li>
-                <li><i class='bx bxs-user-plus' ></i><a href="./masculino.html">Criar Conta</a></li>
+                <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                <div id="logado" style="display: none">
+                    <div class="bem-vindo">
+                        <h1>Bem-vindo(a), <span id="nomeCliente"></span></h1>
+                        <button id="logoutBtn" onclick="logout()">Sair</button>
+                    </div>
+                </div>
+                <li><img src="./src/user-interface.png" alt="img-login"><a href="./login.html">Login</a></li>
+                <li><img src="./src/add-user (1).png" alt="img-login"><a href="./cadastro.html">Criar Conta</a></li>
             </ul>
             <div id="divBusca">
                 <input type="text" id="txtBusca" placeholder="Buscar..." />
