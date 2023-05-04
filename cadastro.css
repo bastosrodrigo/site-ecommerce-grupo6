@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    box-sizing:border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#container {
+    background-color: #cfcfce;
+}
+header{
+  background-color: rgb(150, 135, 236);
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+}
+
+.logo img{
+  max-width: 130px;
+  height: auto;
+  margin-left: 50px;
+}
+
+.menuprincipal{
+  display: flex;
+  list-style-type: none;
+}
+li a{
+  text-decoration: none;
+}
+
+.menuprincipal a{
+  font-size: 18px;
+  margin: 20px;
+  color: #f2f2f2;
+}
+
+#barraPreta {
+    height: 25px;
+    background-color: black;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+/*- CAIXA DE PESQUISA -*/
+
+#divBusca{
+    background-color:#fff;
+    border:solid 2px;
+    border-radius:15px;
+    width:300px;
+    height: 35px;
+    margin-right: 50px;
+    position: relative;
+}
+  
+#txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:20px;
+    font-size:18px;
+    border:none;
+    outline: none;
+    height:30px;
+    width:260px;
+}
+
+#divBusca img {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    position: absolute;
+    right: 5px;
+}
+/*- Menu -*/
+
+.menu {
+  display: flex;
+}
+
+.menu a{
+  color: #2c2c2c;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/*- Slideshow -*/
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-bottom: 20px;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+/* - Fim Slideshow -*/
+
+.texto-centro h2{
+  color: #111;
+  font-size: 28px;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.produtos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+  gap: 2rem;
+  
+}
+.prod{
+  position: relative;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+.prod img{
+  width: 100%;
+  height: auto;
+  border: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.preco h4{
+  color: #111;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+.preco p{
+  color: #151515;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ############# AQUI DO FORMULARIO DE CADASTRO ###################*/
+
+/* Campos de entrada de dados */
+#nome, #cpf, #senha, #senha-repetir, #cep, #bairro, #localidade, #uf {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+  }
+  
+  hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+  }
+  
+  .btnRegistrar {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  }
+  
+  .btnRegistrar:hover {
+  opacity:1;
+  }
+
+  /* cor azul nos links */
+  a {
+  color: dodgerblue;
+  }
+
+
+/* contact-section */
+.contato{
+  background-color: rgb(150, 135, 236);
+}
+.info-contato{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.info img{
+  width: 140px;
+  height: auto;
+}
+
+.info {
+  margin: 20px;
+
+}
+.info-contato h4{
+  color: black;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.info-contato p{
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.social-icon i{
+  color: black;
+  margin-right: 10px;
+  font-size: 20px;
+}
+.rodape{
+  background-color: #edfff1;
+  text-align: center;
+  padding: 20px;
+}
+.rodape p{
+  color: black;
+  text-transform: capitalize;
+}
+
+/* Botões do login.html */
+
+/* #cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f7f8fa;
+  padding: 10px;
+}
+
+#btnLogin, #btnCadastro {
+  width: 180px;
+  height: 40px;
+  background-color: rgb(105, 174, 224); } /* MUDAR ESSAS CORES DE FUNDO*/
