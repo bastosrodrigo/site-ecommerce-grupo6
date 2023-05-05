@@ -284,3 +284,14 @@ function renderizarLista(lista) {
   }
 
 renderizarLista(produtos);
+
+// adicionar ao carrinho ao clicar AQUI??  COMO ADICIONAR SE NAO TEM BOTÃO
+let carrinho = [];
+
+function adicionarAoCarrinho(produtoId) {
+    let produtoSelecionado = produtos.find(produto => produto.id === produtoId);
+    carrinho.push(produtoSelecionado);
+    console.log(`Produto com id ${produtoId} adicionado ao carrinho`);
+}
+
+/* <button onClick={() => adicionarAoCarrinho(produto.id)}>Adicionar ao Carrinho</button> */

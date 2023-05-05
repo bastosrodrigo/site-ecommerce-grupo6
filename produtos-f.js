@@ -101,7 +101,8 @@ function renderizarItem(produto) {
                     <i class='${produto.estrela5}'></i>
                 </div>
                 <div class="preco">
-                    <h4>${produto.nome}<button id="carrinho"><i class='bx bx-cart'></i></button></h4>
+                    <h4>${produto.nome}  <button id="carrinho"><i class='bx bx-cart'></i></button></h4>
+
                     <p>${produto.preco}</p>
                 </div>
             </div>`;
@@ -147,3 +148,4 @@ if (checaUsuarioLogado()) {
   document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
   document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
 }
+

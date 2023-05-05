@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,80 +10,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <script src="./script.js" defer></script>
-    <title>Masculino | FãNáticos</title>
+    <script src="./carrinho.js" defer></script>
+    <title>Carrinho | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
-            <a href="#" class="logo"><img src="./src/logo-fanaticos.png" alt=""></a>
+            <a href="./index.html" class="logo"><img src="./src/logo-fanaticos.png" alt=""></a>
             <ul class="menuprincipal">
                 <li><a href="./index.html">Início</a></li>
                 <li><a href="./masculino.html">Masculino</a></li>
-                <li><a href="#">Feminino</a></li>
-                <li><a href="#">Infantil</a></li>
-                <li><a href="#">Rastrear Pedido</a></li>
+                <li><a href="./feminino.html">Feminino</a></li>
+                <li><a href="./infantil.html">Infantil</a></li>
+            </ul>
+            <ul class="login">
+                <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                <div id="logado" style="display: none">
+                    <div class="bem-vindo">
+                        <h1>Bem-vindo(a), <span id="nomeCliente"></span></h1>
+                        <button id="logoutBtn" onclick="logout()">Sair</button>
+                    </div>
+                </div>
+                <li><img src="./src/user-interface.png" alt="img-login"><a href="./login.html">Login</a></li>
+                <li><img src="./src/add-user (1).png" alt="img-login"><a href="./cadastro.html">Criar Conta</a></li>
             </ul>
             <div id="divBusca">
-                <input type="text" id="txtBusca" placeholder="Buscar..."/>
-                <img src="./src/lupa.png" id="btnBusca" alt="Buscar"/>
+                <input type="text" id="txtBusca" placeholder="Buscar..." />
+                <img src="./src/lupa.png" id="btnBusca" alt="Buscar" />
             </div>
         </header>
         <div id="barraPreta">
         </div>
-
-        <!-- Início do Slide-->
-        <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-                <img src="./src/img1.png" style="width:100%">
-                    <div class="text">Imagem 1</div>
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-                <img src="./src/img2.png" style="width:100%">
-                    <div class="text">Imagem 2</div>
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-                <img src="./src/img3.png" style="width:100%">
-                    <div class="text">Imagem 3</div>
-        </div>
-  
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-        <!--fim do Slide-->
         <hr>
+
         <!--Início do Carrinho-->
-        <section class="conteudo-central">
-            <div id="conteudo-carrinho">
-                <h2 class="header-carrinho">Meu Carrinho</h2>
-                <p id="dados-do-carrinho">ADICIONAR QUANTIDADE E PRECO
-                </p>
-            </div>
+         <div class="carrinho">
+            <h2 class="titulo-carrinho"><i class='bx bxs-cart ' id="icone-carrinho"></i>Meu Carrinho</h2>
 
-            <div id="conteudo-resumo">
-                <h2 class="header-resumo">Resumo da compra</h2>
-
-                <p id="dados-resumo">ADICIONAR O RESUMO DA COMPRA E VALORES</p>
-                <span>Subtotal / cupom / valor total </span>
-                <button class="btnConfirma" onclick="confirmarCompra()">Confirmar compra</button>
-                <button class="btnVoltarLoja" onclick="window.location.href = 'index.html';">Comprar mais
-                    produtos</button>
+            <div class="conteudo-carrinho">       
+                <img src="#img-produto" alt="" class="img-carrinho">         
+                <div class="detalhes-do-carrinho">
+                    <div class="produto-nome">NOME DO PRODUTO AQUI</div>
+                    <div class="produto-preço">R$</div>
+                    <input type="number" value="1" class="quantidade-carrinho">
+                </div>
+                <!--Remover do Carrinho -->
+                <i class='bx bxs-trash remover-do-carrinho'></i>
             </div>
-        </section>
+        </div>
+
+        <!--Total -->
+        <div class="total">
+            <div class="total-titulo">Total</div>
+            <div class="preco-total">PRECO</div>
+        </div>
+
+        <!--Botão confirmar -->
+        <div class="btnComprar"><button class="btnConfirma" onclick="confirmarCompra()">Confirmar compra</button></div>
+        <div class="btnRetornarLoja"> <button class="btnRetornarLoja"
+                onclick="window.location.href = 'index.html';">Comprar mais
+                produtos 👍<i class='bx bx-store-alt btnHome' ></i></button></div>
+        <!--Fim carrinho-->
         <hr>
-        <!--Fim -->
+
         <!-- Início do Contato -->
         <section class="contato">
             <div class="info-contato">
@@ -125,4 +116,5 @@
 
     </div>
 </body>
+
 </html>
