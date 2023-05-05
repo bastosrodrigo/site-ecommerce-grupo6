@@ -221,10 +221,12 @@ li a{
   border: 5px;
   border-radius: 15px;
   transition: .4s;
+
 }
 .prod:hover{
   background-color: #242424;
   transform: scale(1.05);
+  padding-bottom: 10px;
 }
 .prod img{
   width: 100%;
@@ -285,6 +287,11 @@ li a{
 .contato{
   background: linear-gradient(to right, #81a6cc, #104f8f);
 }
+
+.suport a{
+  text-decoration: none;
+}
+
 .info-contato{
   display: flex;
   align-items: center;
@@ -360,6 +367,22 @@ li a{
   flex-direction: column;
   justify-content: space-evenly;
   min-height: 30vh;
+}
+
+.estrelas {
+  display: flex;
+  justify-content: center;
+}
+
+#carrinho {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 70px;
+  padding: 0 20px;
+  cursor: pointer;
 }
 
 .conteudo-carrinho{
@@ -481,3 +504,19 @@ li a{
 }
 
 /* aqui termina o carrinho */
+/* Política de privacidade */
+.privacidade {
+  margin: 100px;
+}
+
+.privacidade h3 {
+  text-align: center;
+}
+
+.sobre-nos {
+  margin: 100px;
+}
+
+.sobre-nos h3 {
+  text-align: center;
+}

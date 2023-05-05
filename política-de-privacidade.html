@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <script src="./carrinho.js" defer></script>
-    <title>Carrinho | FãNáticos</title>
+    <link rel="shortcut icon" href="./src/logo-fanaticos.png" type="image/x-icon" />
+    <script src="./script.js" defer></script>
+    <title>Política de Privacidade | FãNáticos</title>
 </head>
-
 <body>
     <div id="container">
         <header>
@@ -42,39 +41,19 @@
         </header>
         <div id="barraPreta">
         </div>
-        <hr>
-
-        <!--Início do Carrinho-->
-         <div class="carrinho-principal">
-            <h2 class="titulo-carrinho"><i class='bx bxs-cart ' id="icone-carrinho"></i>Meu Carrinho</h2>
-
-            <div class="conteudo-carrinho">       
-                <!-- AQUI O CAMPO PRINCIPAL DO CARRINHO QUE SERÁ COMPLETADO COM TEMPLATE LITERALS -->
-                    <img src="produto-src" alt="" class="img-carrinho">        
-                <div class="detalhes-do-carrinho">
-                    <div class="produto-nome">NOME DO PRODUTO AQUI</div>
-                    <div class="produto-preço">R$</div>
-                    <input type="number" value="1" class="quantidade-carrinho">
-                </div>
-                Remover do Carrinho
-                <i class='bx bxs-trash remover-do-carrinho'></i>
-            </div>
-        </div>
-
-        <!--Total -->
-        <div class="total">
-            <div class="total-titulo">Total</div>
-            <div class="preco-total">R$</div>
-        </div>
-
-        <!--Botão confirmar -->
-        <div class="btnComprar"><button class="btnConfirma" onclick="confirmarCompra()">Confirmar compra</button></div>
-        <div class="btnRetornarLoja"> <button class="btnRetornaLoja"
-                onclick="window.location.href = 'index.html';">Comprar mais
-                produtos 👍<i class='bx bx-store-alt btnHome' ></i></button></div>
-        <!--Fim carrinho-->
-        <hr>
-
+        <!--Início dos Produtos-->
+        <section class="privacidade">
+            <h3>Política de Privacidade</h3><br>
+            <span>O FãNáticos respeita a sua privacidade porque garante o sigilo total das informações que você nos fornece. <br>
+                Fique tranquilo! O número do seu cartão de crédito é usado somente pelo Mercado Pago e apenas no processamento de compra, não sendo, de nenhuma forma, guardado nos arquivos depois da operação.<br>
+                Apenas dados como e-mail, nome e telefone são armazenados em nosso banco de dados com o intuito de melhorar o nosso relacionamento.<br>
+                O seu endereço de e-mail será utilizado unicamente para contato sobre seus pedidos ou divulgação de promoções e lançamentos do nosso site, podendo ser cancelado por você a qualquer momento.<br>
+                Em caso de dúvidas ou sugestões em relação à nossa política de privacidade, por favor, entre em contato pelo e-mail: contato@fanaticos.com.<br>
+                O FãNáticos garante a segurança de sua compra e respeita a sua privacidade. Temos o compromisso de sempre aprimorar nosso trabalho, assim divulgaremos publicamente quaisquer modificações nesta política de privacidade.<br>
+            </span>
+        </section>
+            <hr>
+        <!--Fim -->
         <!-- Início do Contato -->
         <section class="contato">
             <div class="info-contato">
@@ -93,11 +72,11 @@
                 </div>
                 <div class="suport">
                     <h4>Suporte</h4>
-                    <p>FAQ - Perguntas Frequentes</p>
-                    <p>Sobre nós</p>
-                    <p>Política de privacidade</p>
-                    <p>Política de reembolso</p>
-                    <p>Trocas e Devoluções</p>
+                    <p><a href="./faq.html" class="href">FAQ - Perguntas Frequentes</p>
+                    <p><a href="./sobre-nos.html" class="href">Sobre nós</p>
+                    <p><a href="./política-de-privacidade.html" class="href">Política de privacidade</a></p>
+                    <p><a href="./política-de-reembolso.html" class="href">Política de reembolso</p>
+                    <p><a href="./política-de-frete.html" class="href">Política de frete</p>
                 </div>
                 <div class="atendimento">
                     <h4>Central de Atendimento</h4>
@@ -117,5 +96,24 @@
 
     </div>
 </body>
-
+    <script>
+        document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+        function checaUsuarioLogado() {
+        return localStorage.getItem("idCliente") !== null;
+        }
+        if (checaUsuarioLogado()) {
+        document.getElementById("logado").setAttribute("style", "display:flex")
+        document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
+        document.querySelector('a[href="./login.html"]').style.display = "none";
+        document.querySelector('a[href="./cadastro.html"]').style.display = "none";
+        document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
+        document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
+        } else {
+        document.querySelector('.logado').style.display = "none";
+        document.querySelector('a[href="./login.html"]').style.display = "block";
+        document.querySelector('a[href="./cadastro.html"]').style.display = "block";
+        document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
+        document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
+        }
+    </script>
 </html>

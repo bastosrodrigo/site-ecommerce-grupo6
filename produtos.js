@@ -269,8 +269,9 @@ function renderizarItem(produto) {
                     <i class='${produto.estrela5}'></i>
                 </div>
                 <div class="preco">
-                    <h4>${produto.nome}<button id="carrinho"><i class='bx bx-cart'></i></button></h4>
+                    <h4>${produto.nome}</button></h4>
                     <p>${produto.preco}</p>
+                    <button id="carrinho"> COMPRAR <i class='bx bx-cart'></i>
                 </div>
             </div>`;
        
