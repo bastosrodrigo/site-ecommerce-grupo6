@@ -71,6 +71,18 @@ const clientes = [
       localidade: "São Paulo",
       uf: "SP"
     }
+  },
+  {
+    id: 7,
+    nome: "Elvis Presley",
+    senha: "080135",
+    cpf: "19351977123",
+    endereco: {
+      cep: "22040-070",
+      bairro: "Tupelo",
+      localidade: "Mississipi",
+      uf: "EUA"
+    }
   }
 ]
 /* #### javascript da loja #### */

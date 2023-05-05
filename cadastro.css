@@ -8,7 +8,7 @@
   background-color: #cfcfce;
 }
 header{
-background-color: rgb(150, 135, 236);
+background: linear-gradient(to right, #81a6cc, #104f8f);
 width: 100%;
 height: 140px;
 display: flex;
@@ -39,16 +39,15 @@ color: #f2f2f2;
 
 #barraPreta {
   height: 25px;
-  background-color: black;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), black);
   margin-bottom: 50px;
 }
 
 /*- CAIXA DE PESQUISA -*/
 
 #divBusca{
-  background-color:#fff;
-  border:solid 2px;
+  background:linear-gradient(to right, #8baad4, #8baad4, #0c2c4c);
+  border:solid 2px #0c2c4c;
   border-radius:15px;
   width:300px;
   height: 35px;
@@ -65,14 +64,20 @@ color: #f2f2f2;
   outline: none;
   height:30px;
   width:260px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #divBusca img {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   margin: 1px;
   position: absolute;
   right: 5px;
+  background-color: #92accc;
+  border-radius: 9px;
+  padding: 2px;
+  margin: 2px;
 }
 /*- Menu -*/
 
@@ -260,7 +265,7 @@ color: dodgerblue;
 
 /* contact-section */
 .contato{
-background-color: rgb(150, 135, 236);
+background: linear-gradient(to right, #81a6cc, #104f8f);
 }
 .info-contato{
 display: flex;
@@ -332,27 +337,44 @@ padding: 50px;
 }
 /*-----------------------------LOGiN-----------------------------*/
 #conteudo-login {
-background-color: rgb(150, 135, 236);
+background: linear-gradient(to right, #81a6cc, #104f8f);
 padding: 50px;
 border-radius: 20px;
 box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-
 }
 
 .conteudo-central #cpf , #senha, #repetir-senha {
+background:linear-gradient(to right, #8baad4, #8baad4, #0c2c4c);
+border:solid 2px #0c2c4c;
 border-radius: 10px;
+font-weight: bold;
 }
 .conteudo-central h2 {
 text-align: center;
 text-transform: uppercase;
 font-weight: bold;
+color: white;
 }
 
 .conteudo-central #btnLogin {
+background:#103a64;
+border:solid 2px #0c2c4c;
+color: white;
+font-weight: bold;
 margin: 10px;
 border-radius: 5px;
-font-size: 15px;
+padding: 5px;
+font-size: 12px;
 justify-content: center;
+transition: .4s;
+cursor: pointer;
+}
+
+.conteudo-central #btnLogin:hover{
+  background: #237ad1;
+  color: black;
+  transform: scale(1.07);
+  font-weight: bold;
 }
 
 /*-----------------------------CADASTRO-----------------------------*/
@@ -361,7 +383,7 @@ justify-content: center;
 display: flex;
 flex-direction: column;
 padding: 50px;
-background-color: rgb(150, 135, 236);
+background: linear-gradient(to right, #81a6cc, #104f8f);
 border-radius: 20px;
 box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 margin-left: 20%;
@@ -369,8 +391,27 @@ margin-right: 20%;
 margin-bottom: 5%;
 }
 
-#nome, #cpf, #senha, #repetir-senha, #cep, #bairro, #localidade, #uf, .btnRegistrar{
+#nome, #cpf, #senha, #repetir-senha, #cep, #bairro, #localidade, #uf{
+background:linear-gradient(to right, #8baad4, #8baad4, #0c2c4c);
+border:solid 2px #0c2c4c;
 border-radius: 10px;
+font-weight: bold;
+}
+
+.btnRegistrar{
+background:#103a64;
+border:solid 2px #0c2c4c;
+color: white;
+font-weight: bold;
+border-radius: 10px;
+transition: .4s;
+}
+
+.btnRegistrar:hover{
+background: #237ad1;
+color: black;
+transform: scale(1.03);
+font-weight: bold;
 }
 
 .formulario form {

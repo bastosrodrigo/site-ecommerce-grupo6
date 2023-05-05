@@ -24,12 +24,18 @@ header{
   max-width: 130px;
   height: auto;
   margin-left: 50px;
+  transition: .4s;
+}
+
+.logo img:hover{
+  transform: scale(1.07);
 }
 
 .menuprincipal{
   display: flex;
   list-style-type: none;
 }
+
 li a{
   text-decoration: none;
 }
@@ -264,7 +270,15 @@ li a{
 }
 
 #carrinho{
-  cursor: pointer;
+  color: white;
+  background-color: #111;
+  border-radius: 10px;
+  margin: 4px;
+  transition: .4s;
+}
+
+#carrinho:hover{
+  transform: scale(1.20);
 }
 
 /* contact-section */
@@ -323,7 +337,19 @@ li a{
   display: flex;
 }
 #logoutBtn {
-  margin-left: 20px;
+  background-color: #0c2c4c00;
+  border: #0c2c4c00;
+  padding: 5px;
+  transition: .4s;
+}
+    
+#logoutBtn:hover{
+ transform: scale(1.20);
+}
+
+.bem-vindo h1{
+  color: white;
+  font-size: 16px;
 }
 
 
@@ -414,15 +440,35 @@ li a{
   display: flex;
   margin: 1.2rem auto ;
   padding: 12px 20px;
-  border: none;
-  background-color: #417fbd;
+  border:solid 2px #0c2c4c;
+  color: white;
+  background:#103a64;
+  border-radius: 15px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  transition: .4s;
 }
 
 .btnConfirma:hover{
-  background: var(--text-color);
+  background: #237ad1;
+  color: black;
+  transform: scale(1.03);
+}
+
+.btnRetornaLoja{
+  background-color:  white;
+  border-radius: 15px;
+  padding: 17px 25px;
+  cursor: pointer;
+  transition: .4s;
+  font-weight: bold;
+}
+
+.btnRetornaLoja:hover{
+  color: white;
+  transform: scale(1.03);
+  background-color:  rgb(190, 190, 190);
 }
 
 .btnRetornarLoja{
@@ -431,7 +477,7 @@ li a{
   font-size: 1rem;
   padding: 12px 20px;
   margin-bottom: 20px;
-  cursor: pointer;
+
 }
 
 /* aqui termina o carrinho */
