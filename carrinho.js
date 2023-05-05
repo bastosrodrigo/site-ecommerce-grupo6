@@ -29,17 +29,38 @@ if (checaUsuarioLogado()) {
   document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
 }
 
+// pegar os dados da carrinho[] salva no localStorage
+const carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
-// Atualizando conteudo do carrinho (PROCURAR)
-let itensCarrinhos = [];
+console.log(carrinho) // DANDO NULO
 
-filtrarProdutos.forEach(produto => {
-  const elementoProduto = ` <div class="product">
-      <img src="${produto.src}" alt="${produto.nome}">
-      <h3>${produto.nome}</h3>
-      <p>${produto.preco}</p>
-      <button class="carrinho" onclick="adicionarAoCarrinho('${produto.nome}', '${produto.preco}', '${produto.src}')">Adicionar ao Carrinho</button>
-    </div> `
+
+// onde os produtos aparecerão dentro do carrinho
+const carrinhoElemento = document.getElementById("conteudo-carrinho");
+
+// cria elementos HTML de cada produto no carrinho
+carrinho.forEach(function (produto) {
+  const produtoElemento = document.createElement("div");
+  produtoElemento.innerHTML = `<img src="${produto.src}" alt="${produto.nome}">
+     <div class="detalhes-do-carrinho">
+     <div class="produto-nome">${produto.nome}</div>
+     <div class="produto-preço"> ${produto.preco.toFixed(2)}</div>
+     <input type="number" value="1" class="quantidade-carrinho">
+     </div>
+     <i class='bx bxs-trash remover-do-carrinho'></i>`
   ;
-  document.getElementById("produtos").innerHTML += elementoProduto;
+  carrinhoElemento.appendChild(produtoElemento);
 });
+
+
+
+
+// adicionar botão produtos.pop() ao clicar no confirmar compra
+
+// // código para limpar localStorage de carirnho [] depois de apertar confirmar
+// const btnConfirma = document.getElementById("finalizar-compra");
+// finalizarCompraBtn.addEventListener("click", function () {
+//   localStorage.clear();
+//
+//   window.location.href = "index.html";
+// });

@@ -65,3 +65,36 @@ function logout() {
 
   checaUsuarioLogado();
 }
+
+
+/* APENAS PARA TESTES */
+const idProdutos = produtos.map((produto) => produto.id);
+const nomesProdutos = produtos.map((produto) => produto.nome);
+const precoProdutos = produtos.map((produto) => produto.preco);
+const srcProdutos = produtos.map((produto) => produto.src);
+console.log(idProdutos, nomesProdutos, precoProdutos, srcProdutos); // mostra o array dos produtos
+
+
+/* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS*/
+const carrinho = [];
+
+window.onload = function () {
+  
+  const listaElemento = document.getElementById("lista");
+  const carrinhoBtns = listaElemento.querySelectorAll("#carrinho");
+
+  carrinhoBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const produtoSelecionado = produtos.find((produto) => produto.id === btn.dataset.id);
+      carrinho.push(produtoSelecionado);
+  
+      localStorage.setItem('carrinho', JSON.stringify(carrinho)); // para adicionar no localStorage e pegar no carrinho.html
+
+      console.log(carrinho); // para teste
+      console.log(produtoSelecionado) // para teste
+
+      window.location.href = "carrinho.html"; // leva para a página do carrinho
+    });
+  });
+};
+

@@ -263,6 +263,10 @@ li a{
   color: white;
 }
 
+#carrinho{
+  cursor: pointer;
+}
+
 /* contact-section */
 .contato{
   background: linear-gradient(to right, #81a6cc, #104f8f);
@@ -325,7 +329,7 @@ li a{
 
 /* aqui começa o carrinho */
 
-.carrinho{
+.carrinho-principal{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
