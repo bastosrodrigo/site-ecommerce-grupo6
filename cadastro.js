@@ -222,8 +222,6 @@ document.getElementById("cadastro-usuario").addEventListener("submit", salvarDad
 
 checaUsuarioLogado();
 
-
-
 // função para limpar a sessionStora e redireciona para o login
 function logout() {
   localStorage.clear();

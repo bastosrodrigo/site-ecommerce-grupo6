@@ -58,7 +58,7 @@ if (checaUsuarioLogado()) {
   document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
 }
 
-// função para limpar a sessionStora e redireciona para o login
+// função para limpar o localStorage e redireciona para o login
 function logout() {
   localStorage.clear();
   window.location.href = "login.html";
@@ -67,25 +67,31 @@ function logout() {
 }
 
 
-/* APENAS PARA TESTES */
+/* APENAS PARA TESTES MOSTRAR NO CONSOLE OS MAPS */
 const idProdutos = produtos.map((produto) => produto.id);
 const nomesProdutos = produtos.map((produto) => produto.nome);
 const precoProdutos = produtos.map((produto) => produto.preco);
 const srcProdutos = produtos.map((produto) => produto.src);
-console.log(idProdutos, nomesProdutos, precoProdutos, srcProdutos); // mostra o array dos produtos
+console.log(idProdutos, nomesProdutos, precoProdutos, srcProdutos); // mostra o array dos produtos depois deles serem gerados no window.onload
 
 
-/* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS*/
-const carrinho = [];
 
+// #### CÓDIGO PARA PEGAR OS PRODUTOS E ADICIONAR NO CARRINHO 
+// está adicionando mas quando abre carrinho.html fala que carrinho not defined
+
+/* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS */
 window.onload = function () {
-  
   const listaElemento = document.getElementById("lista");
   const carrinhoBtns = listaElemento.querySelectorAll("#carrinho");
+  let carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
-  carrinhoBtns.forEach(function (btn) {
+  if (!carrinho) {
+    carrinho = [];
+  }
+  
+  carrinhoBtns.forEach(function (btn,index) {
     btn.addEventListener("click", function () {
-      const produtoSelecionado = produtos.find((produto) => produto.id === btn.dataset.id);
+      const produtoSelecionado = produtos[index]
       carrinho.push(produtoSelecionado);
   
       localStorage.setItem('carrinho', JSON.stringify(carrinho)); // para adicionar no localStorage e pegar no carrinho.html
@@ -94,7 +100,8 @@ window.onload = function () {
       console.log(produtoSelecionado) // para teste
 
       window.location.href = "carrinho.html"; // leva para a página do carrinho
-    });
-  });
+    });
+  });
 };
+
 

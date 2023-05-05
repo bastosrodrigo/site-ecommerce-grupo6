@@ -1,112 +1,123 @@
-/* ######  produtos  ####### */
 const produtos = [
     {
         id: 1,
-        nome: "Camisa Flamengo",
+        nome: "Camisa Gigante da Colina",
         categoria: "masculino",
-        src: "./src/2.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star-half',
-        preco: "R$ 250,00",
+        src: "./src/1.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "250,00"
     },
     {
         id: 2,
-        nome: "Camisa Fluminense",
+        nome: "Camisa Flamengo",
         categoria: "masculino",
-        src: "./src/3.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star-half',
-        preco: "R$ 250,00",   
+        src: "./src/2.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "250,00"
     },
     {
         id: 3,
-        nome: "Camisa Botafogo",
+        nome: "Camisa Fluminense",
         categoria: "masculino",
-        src: "./src/4.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star-half',
-        preco: "R$ 250,00",
+        src: "./src/3.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "250,00"
     },
     {
         id: 4,
-        nome: "Camisa Real Madrid",
+        nome: "Camisa Botafogo",
         categoria: "masculino",
-        src: "./src/5.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star',
-        preco: "R$ 499,99",
+        src: "./src/4.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "250,00"
     },
     {
         id: 5,
-        nome: "Camisa Paris Saint-Germain",
+        nome: "Camisa Real Madrid",
         categoria: "masculino",
-        src: "./src/6.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star-half',
-        preco: "R$ 499,99",
+        src: "./src/5.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star',
+        preco: "499,99"
     },
     {
         id: 6,
-        nome: "Camisa Barcelona",
+        nome: "Camisa Paris Saint-Germain",
         categoria: "masculino",
-        src: "./src/7.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star',
-        preco: "R$ 350,49",
+        src: "./src/6.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "499,99"
     },
     {
         id: 7,
-        nome: "Camisa Juventus",
+        nome: "Camisa Barcelona",
         categoria: "masculino",
-        src: "./src/8.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star-half',
-        preco: "R$ 379,99",
+        src: "./src/7.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star',
+        preco: "350,49"
     },
     {
         id: 8,
-        nome: "Camisa Palmeiras",
+        nome: "Camisa Juventus",
         categoria: "masculino",
-        src: "./src/9.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star-half',
-        preco: "R$ 284,90",
+        src: "./src/8.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "379,99"
     },
     {
         id: 9,
+        nome: "Camisa Palmeiras",
+        categoria: "masculino",
+        src: "./src/9.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "284,90"
+    },
+    {
+        id: 10,
         nome: "Camisa Grêmio",
         categoria: "masculino",
         src: "./src/10.png",
-        estrela1:'bx bxs-star',
-        estrela2:'bx bxs-star',
-        estrela3:'bx bxs-star',
-        estrela4:'bx bxs-star',
-        estrela5:'bx bxs-star-half',
-        preco: "R$ 159,99",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "159,99"
     }
 ]
 
@@ -171,3 +182,42 @@ if (checaUsuarioLogado()) {
   document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
   document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
 }
+
+/* APENAS PARA TESTES MOSTRAR NO CONSOLE OS MAPS */
+const idProdutos = produtos.map((produto) => produto.id);
+const nomesProdutos = produtos.map((produto) => produto.nome);
+const precoProdutos = produtos.map((produto) => produto.preco);
+const srcProdutos = produtos.map((produto) => produto.src);
+console.log(idProdutos, nomesProdutos, precoProdutos, srcProdutos); // mostra o array dos produtos depois deles serem gerados no window.onload
+
+
+let carrinho = JSON.parse(localStorage.getItem('carrinho'));
+ console.log()
+
+// #### CÓDIGO PARA PEGAR OS PRODUTOS E ADICIONAR NO CARRINHO 
+// está adicionando mas quando abre carrinho.html fala que carrinho not defined
+
+/* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS */
+window.onload = function () {
+  const listaElemento = document.getElementById("lista");
+  const carrinhoBtns = listaElemento.querySelectorAll("#carrinho");
+  let carrinho = JSON.parse(localStorage.getItem('carrinho'));
+
+  if (!carrinho) {
+    carrinho = [];
+  }
+  
+  carrinhoBtns.forEach(function (btn,index) {
+    btn.addEventListener("click", function () {
+      const produtoSelecionado = produtos[index]
+      carrinho.push(produtoSelecionado);
+  
+      localStorage.setItem('carrinho', JSON.stringify(carrinho)); // para adicionar no localStorage e pegar no carrinho.html
+
+      console.log(carrinho); // para teste
+      console.log(produtoSelecionado) // para teste
+
+      window.location.href = "carrinho.html"; // leva para a página do carrinho
+    });
+  });
+};

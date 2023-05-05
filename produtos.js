@@ -2,6 +2,18 @@
 const produtos = [
     {
         id: 1,
+        nome: "Camisa Gigante da Colina",
+        categoria: "masculino",
+        src: "./src/1.png",
+        estrela1: 'bx bxs-star',
+        estrela2: 'bx bxs-star',
+        estrela3: 'bx bxs-star',
+        estrela4: 'bx bxs-star',
+        estrela5: 'bx bxs-star-half',
+        preco: "250,00"
+    },
+    {
+        id: 2,
         nome: "Camisa Flamengo",
         categoria: "masculino",
         src: "./src/2.png",
@@ -10,10 +22,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 250,00",
+        preco: "250,00"
     },
     {
-        id: 2,
+        id: 3,
         nome: "Camisa Fluminense",
         categoria: "masculino",
         src: "./src/3.png",
@@ -22,10 +34,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 250,00",
+        preco: "250,00"
     },
     {
-        id: 3,
+        id: 4,
         nome: "Camisa Botafogo",
         categoria: "masculino",
         src: "./src/4.png",
@@ -34,10 +46,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 250,00",
+        preco: "250,00"
     },
     {
-        id: 4,
+        id: 5,
         nome: "Camisa Real Madrid",
         categoria: "masculino",
         src: "./src/5.png",
@@ -46,10 +58,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star',
-        preco: "R$ 499,99",
+        preco: "499,99"
     },
     {
-        id: 5,
+        id: 6,
         nome: "Camisa Paris Saint-Germain",
         categoria: "masculino",
         src: "./src/6.png",
@@ -58,10 +70,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 499,99",
+        preco: "499,99"
     },
     {
-        id: 6,
+        id: 7,
         nome: "Camisa Barcelona",
         categoria: "masculino",
         src: "./src/7.png",
@@ -70,10 +82,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star',
-        preco: "R$ 350,49",
+        preco: "350,49"
     },
     {
-        id: 7,
+        id: 8,
         nome: "Camisa Juventus",
         categoria: "masculino",
         src: "./src/8.png",
@@ -82,10 +94,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 379,99",
+        preco: "379,99"
     },
     {
-        id: 8,
+        id: 9,
         nome: "Camisa Palmeiras",
         categoria: "masculino",
         src: "./src/9.png",
@@ -94,10 +106,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 284,90",
+        preco: "284,90"
     },
     {
-        id: 9,
+        id: 10,
         nome: "Camisa Grêmio",
         categoria: "masculino",
         src: "./src/10.png",
@@ -106,10 +118,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 159,99",
+        preco: "159,99"
     },
     {
-        id: 10,
+        id: 11,
         nome: "Kit Santos Infantil",
         categoria: "infantil",
         src: "./src/11.png",
@@ -118,10 +130,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 189,99",
+        preco: "189,99"
     },
     {
-        id: 11,
+        id: 12,
         nome: "Kit Fluminense Infantil",
         categoria: "infantil",
         src: "./src/12.png",
@@ -130,10 +142,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 237,49",
+        preco: "237,49"
     },
     {
-        id: 12,
+        id: 13,
         nome: "Kit Internacional Infantil",
         categoria: "infantil",
         src: "./src/13.png",
@@ -142,10 +154,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 309,00",
+        preco: "309,00"
     },
     {
-        id: 13,
+        id: 14,
         nome: "Kit Recife Infantil",
         categoria: "infantil",
         src: "./src/14.png",
@@ -154,10 +166,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 109,99",
+        preco: "109,99"
     },
     {
-        id: 14,
+        id: 15,
         nome: "Kit Flamengo Infantil",
         categoria: "infantil",
         src: "./src/15.png",
@@ -166,10 +178,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 284,99",
+        preco: "284,99"
     },
     {
-        id: 15,
+        id: 16,
         nome: "Camisa Flamengo Feminino",
         categoria: "feminino",
         src: "./src/16.png",
@@ -178,10 +190,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 297,49",
+        preco: "297,49"
     },
     {
-        id: 16,
+        id: 17,
         nome: "Camisa Vasco Feminino",
         categoria: "feminino",
         src: "./src/17.png",
@@ -190,10 +202,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star',
-        preco: "R$ 189,90",
+        preco: "189,90"
     },
     {
-        id: 17,
+        id: 18,
         nome: "Camisa Corinthians Feminino",
         categoria: "feminino",
         src: "./src/18.png",
@@ -202,10 +214,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 179,90",
+        preco: "179,90"
     },
     {
-        id: 18,
+        id: 19,
         nome: "Camisa Real Madrid Feminino",
         categoria: "feminino",
         src: "./src/19.png",
@@ -214,10 +226,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 199,99",
+        preco: "199,99"
     },
     {
-        id: 19,
+        id: 20,
         nome: "Camisa Grêmio Feminino",
         categoria: "feminino",
         src: "./src/20.png",
@@ -226,10 +238,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 149,90",
+        preco: "149,90"
     },
     {
-        id: 20,
+        id: 21,
         nome: "Camisa Palmeiras Feminino",
         categoria: "feminino",
         src: "./src/21.png",
@@ -238,10 +250,10 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 94,90",
+        preco: "94,90"
     },
     {
-        id: 21,
+        id: 22,
         nome: "Camisa Internacional Feminino",
         categoria: "feminino",
         src: "./src/22.png",
@@ -250,9 +262,12 @@ const produtos = [
         estrela3: 'bx bxs-star',
         estrela4: 'bx bxs-star',
         estrela5: 'bx bxs-star-half',
-        preco: "R$ 297,49",
+        preco: "297,49"
     }
 ]
+
+const produtosJSON = JSON.stringify(produtos);
+localStorage.setItem('produtos', produtosJSON);
 
 const listaElemento = document.getElementById("lista");
 
@@ -269,9 +284,8 @@ function renderizarItem(produto) {
                     <i class='${produto.estrela5}'></i>
                 </div>
                 <div class="preco">
-                    <h4>${produto.nome}</button></h4>
+                    <h4>${produto.nome}<button id="carrinho"><i class='bx bx-cart'></i></button></h4>
                     <p>${produto.preco}</p>
-                    <button id="carrinho"> COMPRAR <i class='bx bx-cart'></i>
                 </div>
             </div>`;
        
@@ -285,4 +299,6 @@ function renderizarLista(lista) {
     });
 }
 
-renderizarLista(produtos);
+// filtra pelo preço na tela inicial
+const produtosBaratos = produtos.filter(produto => produto.preco < '270,00');
+renderizarLista(produtosBaratos);
