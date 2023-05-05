@@ -5,7 +5,10 @@
 }
 
 #container {
-    background-color: #cfcfce;
+     background-color: #cfcfce; 
+     /* background-image: url(./src/background.png); 
+     background-position: center;
+     background-repeat: no-repeat; */
 }
 header{
   background: linear-gradient(to right, #81a6cc, #104f8f);
