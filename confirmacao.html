@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="shortcut icon" href="./src/logo-fanaticos.png" type="image/x-icon" />
-    <script src="./script.js" defer></script>
-    <title>Página Inicial | FãNáticos</title>
+    <script src="./style.js" defer></script>
+    <title>Carrinho | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -28,7 +29,7 @@
                 <div id="logado" style="display: none">
                     <div class="bem-vindo">
                         <h1>Bem-vindo(a), <span id="nomeCliente"></span></h1>
-                        <button id="logoutBtn" onclick="logout()"><i class='bx bx-log-out'></i></button>
+                        <button id="logoutBtn" onclick="logout()">Sair</button>
                     </div>
                 </div>
                 <li><img src="./src/user-interface.png" alt="img-login"><a href="./login.html">Login</a></li>
@@ -41,57 +42,27 @@
         </header>
         <div id="barraPreta">
         </div>
-
-        <!-- Início do Slide-->
-        <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-                <img src="./src/img1.png" style="width:100%">
-                    <div class="text">Imagem 1</div>
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-                <img src="./src/img2.png" style="width:100%">
-                    <div class="text">Imagem 2</div>
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-                <img src="./src/img3.png" style="width:100%">
-                    <div class="text">Imagem 3</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
-                <img src="./src/img4.png" style="width:100%">
-                    <div class="text">Imagem 4</div>
-        </div>
-  
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
-        <!--fim do Slide-->
         <hr>
-        <!--Início dos Produtos-->
-        <section class="produtos-tela-inicial">
-        <div class="texto-centro">
-            <h2>Mais Vendidos</h2>
+
+        <!--Início -->
+         <div class="carrinho-principal">
+            <h2 class="titulo-carrinho">Obrigado por comprar  na Fãnáticos!</h2>   
+            <h2 class="vitoria">A vitória é imprevisível, mas só existe para quem entra em campo.</h2>   
         </div>
-        <div class="produtos" id="lista"></div>
-        </section>
+
+        <div class="total">
+            <div class="total-titulo">Volte sempre!</div>
+            <div id="preco-total"></div>
+        </div>
+
+        <div class="btnRetornarLoja"> <button class="btnRetornaLoja"
+                onclick="window.location.href = 'index.html';">Comprar mais
+                produtos 👍<i class='bx bx-store-alt btnHome' ></i></button></div>
+        <!--Fim agradecimento-->
         <hr>
-        <!--Fim -->
-         <!-- Início do Contato -->
-         <section class="contato">
+
+        <!-- Início do Contato -->
+        <section class="contato">
             <div class="info-contato">
                 <div class="info">
                     <img src="./src/logo-fanaticos.png" alt="logo-loja-fanaticos">
@@ -129,8 +100,7 @@
         <div class="rodape">
             <p>Copyright © @2023. Todos os direitos reservados. Design grupo 6 - Serratec</p>
         </div>
-
     </div>
-    <script src="./produtos.js"></script>
 </body>
+
 </html>

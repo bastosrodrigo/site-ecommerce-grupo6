@@ -38,12 +38,12 @@ const clientes = [
   },
   {
     id: 4,
-    nome: "Antônio Goncalves Santos",
+    nome: "Kurt Cobain",
     senha: "123456",
     cpf: "16691816005",
     endereco: {
       cep: "22050-002",
-      bairro: "Copacabana",
+      bairro: "Seattle",
       localidade: "Rio de Janeiro",
       uf: "RJ"
     }

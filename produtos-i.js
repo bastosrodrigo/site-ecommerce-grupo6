@@ -1,71 +1,7 @@
-/* ######  produtos  ####### */
-const produtos = [
-  {
-    id: 11,
-    nome: "Kit Santos Infantil",
-    categoria: "infantil",
-    src: "./src/11.png",
-    estrela1: 'bx bxs-star',
-    estrela2: 'bx bxs-star',
-    estrela3: 'bx bxs-star',
-    estrela4: 'bx bxs-star',
-    estrela5: 'bx bxs-star-half',
-    qtd: 1,
-    preco: "189,99"
-  },
-  {
-    id: 12,
-    nome: "Kit Fluminense Infantil",
-    categoria: "infantil",
-    src: "./src/12.png",
-    estrela1: 'bx bxs-star',
-    estrela2: 'bx bxs-star',
-    estrela3: 'bx bxs-star',
-    estrela4: 'bx bxs-star',
-    estrela5: 'bx bxs-star-half',
-    qtd: 1,
-    preco: "237,49"
-  },
-  {
-    id: 13,
-    nome: "Kit Internacional Infantil",
-    categoria: "infantil",
-    src: "./src/13.png",
-    estrela1: 'bx bxs-star',
-    estrela2: 'bx bxs-star',
-    estrela3: 'bx bxs-star',
-    estrela4: 'bx bxs-star',
-    estrela5: 'bx bxs-star-half',
-    qtd: 1,
-    preco: "309,00"
-  },
-  {
-    id: 14,
-    nome: "Kit Recife Infantil",
-    categoria: "infantil",
-    src: "./src/14.png",
-    estrela1: 'bx bxs-star',
-    estrela2: 'bx bxs-star',
-    estrela3: 'bx bxs-star',
-    estrela4: 'bx bxs-star',
-    estrela5: 'bx bxs-star-half',
-    qtd: 1,
-    preco: "109,99"
-  },
-  {
-    id: 15,
-    nome: "Kit Flamengo Infantil",
-    categoria: "infantil",
-    src: "./src/15.png",
-    estrela1: 'bx bxs-star',
-    estrela2: 'bx bxs-star',
-    estrela3: 'bx bxs-star',
-    estrela4: 'bx bxs-star',
-    estrela5: 'bx bxs-star-half',
-    qtd: 1,
-    preco: "284,99"
-  }
-]
+const produtosJSON = localStorage.getItem('produtos');
+const produtos = JSON.parse(produtosJSON);
+
+console.log(produtosJSON)
 
 const listaElemento = document.getElementById("lista");
 
@@ -84,20 +20,22 @@ function renderizarItem(produto) {
               <div class="preco">
                   <h4>${produto.nome}</h4>
                   <p>R$ ${produto.preco}</p>
-                  <button class="carrinho"><i class='bx bx-cart'></i></button>
+                  <button class="carrinho" id="carrinho-${produto.id}"><i class='bx bx-cart'></i></button>
               </div>
           </div>`;
   return divElemento;
 }
 
 function renderizarLista(lista) {
-  lista.forEach(function (item) {
+  lista.forEach(function(item) {
     const divElemento = renderizarItem(item);
     listaElemento.appendChild(divElemento);
   });
 }
 
-renderizarLista(produtos);
+// filtra pelo pela categoria 
+const produtosInfantis = produtos.filter(produto => produto.categoria === 'infantil');
+renderizarLista(produtosInfantis);
 
 /* #### javascript da loja #### */
 // Pega as informações da localStorage
@@ -131,20 +69,6 @@ if (checaUsuarioLogado()) {
 }
 
 
-/* APENAS PARA TESTES MOSTRAR NO CONSOLE OS MAPS */
-const idProdutos = produtos.map((produto) => produto.id);
-const nomesProdutos = produtos.map((produto) => produto.nome);
-const precoProdutos = produtos.map((produto) => produto.preco);
-const srcProdutos = produtos.map((produto) => produto.src);
-console.log(idProdutos, nomesProdutos, precoProdutos, srcProdutos); // mostra o array dos produtos depois deles serem gerados no window.onload
-
-
-let carrinho = JSON.parse(localStorage.getItem('carrinho'));
- console.log()
-
-// #### CÓDIGO PARA PEGAR OS PRODUTOS E ADICIONAR NO CARRINHO 
-// está adicionando mas quando abre carrinho.html fala que carrinho not defined
-
 /* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS */
 window.onload = function () {
   const listaElemento = document.getElementById("lista");
@@ -157,15 +81,19 @@ window.onload = function () {
   
   carrinhoBtns.forEach(function (btn,index) {
     btn.addEventListener("click", function () {
-      const produtoSelecionado = produtos[index]
+      const produtoSelecionado = produtos[index + 10] // pega ids dos infantis
       carrinho.push(produtoSelecionado);
   
       localStorage.setItem('carrinho', JSON.stringify(carrinho)); // para adicionar no localStorage e pegar no carrinho.html
-
-      console.log(carrinho); // para teste
-      console.log(produtoSelecionado) // para teste
-
+    
       window.location.href = "carrinho.html"; // leva para a página do carrinho
     });
   });
 };
+
+// função para limpar a sessionStora e redireciona para o login
+function logout() {
+  localStorage.clear();
+  window.location.href = "index.html";
+  checaUsuarioLogado();
+}

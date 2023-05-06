@@ -66,7 +66,6 @@ function logout() {
   checaUsuarioLogado();
 }
 
-// #### CÓDIGO PARA PEGAR OS PRODUTOS E ADICIONAR NO CARRINHO 
 /* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS */
 window.onload = function () {
   const listaElemento = document.getElementById("lista");
@@ -79,6 +78,7 @@ window.onload = function () {
   
   carrinhoBtns.forEach(function (btn,index) {
     btn.addEventListener("click", function () {
+      
       const produtoSelecionado = produtos[index]
       carrinho.push(produtoSelecionado);
   

@@ -308,7 +308,7 @@ function renderizarItem(produto) {
                 <div class="preco">
                     <h4>${produto.nome}</h4>
                     <p>R$ ${produto.preco}</p>
-                    <button class="carrinho"><i class='bx bx-cart'></i></button>   
+                    <button class="carrinho" ><i class='bx bx-cart'></i></button>   
                 </div>
             </div>`;
        
@@ -323,5 +323,5 @@ function renderizarLista(lista) {
 }
 
 // filtra pelo preço na tela inicial
-const produtosBaratos = produtos.filter(produto => produto.preco < '270,00');
-renderizarLista(produtosBaratos);
+const produtosPromocao = produtos.filter(produto => produto.id < 8);
+renderizarLista(produtosPromocao);
