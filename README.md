@@ -23,3 +23,5 @@ Projeto desenvolvido com uso de VSCode.
 [![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)]()
 
 [![javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
+
+![Logo](https://github.com/bastosrodrigo/site-ecommerce-grupo6/blob/main/src/logo-fanaticos.png?raw=true)
