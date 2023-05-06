@@ -91,32 +91,32 @@ function renderizarLista(conteudoCarrinho) {
 }
 renderizarLista(carrinho);
 
-// ## removendo produto do carrinho de compras pelo botão da lixeira
-const lixeiras = document.querySelectorAll('.remover-do-carrinho');
+function calcularTotal() {
+  const somaTotal = carrinho.reduce(function (total, produto) {
+    return total + (parseInt(produto.qtd) * parseFloat(produto.preco));
+  }, 0);
+  document.getElementById('preco-total').innerHTML = "R$ " + somaTotal;
+}
+
+// ## removendo produto do carrinho de compras lixeira #####
+// busca todos elementos que possuem classe CSS remover-do-carrinho
+const lixeiras = document.querySelectorAll('.remover-do-carrinho'); 
 lixeiras.forEach(lixeira => {
   lixeira.addEventListener('click', event => {
-    const itemCarrinho = event.target.closest('.prod-carrinho');
+    const itemCarrinho = event.target.closest('.prod-carrinho'); // busca pelo mais próximo
     const nomeProduto = itemCarrinho.querySelector('.produto-nome').textContent;
     const index = carrinho.findIndex(produto => produto.nome === nomeProduto);
     if (index !== -1) {
       carrinho.splice(index, 1);
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
       itemCarrinho.remove();
-      produtosNoCarrinho.splice(produtosNoCarrinho.indexOf(id), 1);
+      // produtosNoCarrinho.splice(produtosNoCarrinho.indexOf(id), 1); REMOVER
       calcularTotal();
     }
   });
 });
 
-
-function calcularTotal() {
-  const somaTotal = carrinho.reduce(function (total, produto) {
-    return total + (parseInt(produto.qtd) * parseFloat(produto.preco));
-  }, 0);
-  document.getElementById('preco-total').innerHTML = somaTotal;
-}
-
-// ## verificar itens no carrinho antes de permitir confirmar compra
+// ## verifica itens no carrinho antes permitir confirmar
 const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
 btnFinalizarCompra.addEventListener("click", function() {
   if (carrinho.length > 0) {
@@ -133,12 +133,12 @@ function confirmarCompra() {
   if (confirmacao) {
     alert("Compra realizada com sucesso!");
 
-    carrinho.forEach(item => {
-      const produto = produtos.find(p => p.id === item.id);
-      if (produto) {
-        produto.qtd -= item.qtd;
-      }
-    });
+    // carrinho.forEach(item => {
+    //   const produto = produtos.find(p => p.id === item.id);
+    //   if (produto) {  // remove quantidade de produtos (não deu tempo)
+    //     produto.qtd -= item.qtd;
+    //   }
+    // });
 
     listaElemento.innerHTML = ""; // apagar produtos no carrinho
     localStorage.removeItem('carrinho'); // limpa o carrinho no localStorage

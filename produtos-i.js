@@ -1,7 +1,7 @@
 const produtosJSON = localStorage.getItem('produtos');
 const produtos = JSON.parse(produtosJSON);
 
-console.log(produtosJSON)
+// console.log(produtosJSON)
 
 const listaElemento = document.getElementById("lista");
 
@@ -23,6 +23,21 @@ function renderizarItem(produto) {
                   <button class="carrinho" id="carrinho-${produto.id}"><i class='bx bx-cart'></i></button>
               </div>
           </div>`;
+
+           // só permite clicar no carrinho se estiver logado
+    const carrinhoBtn = divElemento.querySelector('.carrinho');
+    carrinhoBtn.addEventListener('click', function () {
+        if (!checaUsuarioLogado()) {
+            alert('Bem vindo! Faça login ou cadastre-se, para adicionar produtos ao carrinho.');
+            return;
+        }
+
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        carrinho.push(produto);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        window.location.href = "carrinho.html";
+    });
+    
   return divElemento;
 }
 
@@ -97,3 +112,16 @@ function logout() {
   window.location.href = "index.html";
   checaUsuarioLogado();
 }
+
+// botão de busca
+const txtBusca = document.getElementById("txtBusca");
+const btnBusca = document.getElementById("btnBusca");
+
+btnBusca.addEventListener("click", function () {
+  const termoBusca = txtBusca.value.toLowerCase();
+  const produtosFiltrados = produtos.filter(function (produto) {
+    return produto.nome.toLowerCase().includes(termoBusca);
+  });
+  listaElemento.innerHTML = "";
+  renderizarLista(produtosFiltrados);
+});

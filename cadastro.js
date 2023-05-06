@@ -219,10 +219,9 @@ function salvarDadosCliente(event) {
 
 // Adiciona a função ao eventlistener submit
 document.getElementById("cadastro-usuario").addEventListener("submit", salvarDadosCliente);
-
 checaUsuarioLogado();
 
-// função para limpar a sessionStora e redireciona para o login
+// função para limpar a LocalStorage e redireciona para o login
 function logout() {
   localStorage.clear();
   window.location.href = "index.html";

@@ -49,7 +49,7 @@ if (checaUsuarioLogado()) {
   document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
   document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
 } else {
-  // adiciona o estilo "display: none" para o div Logado, mostra botão login e Criar conta
+  // adiciona estilo "display: none" para o div Logado, mostra botão login e Criar conta
   document.querySelector('.logado').style.display = "none";
   document.querySelector('a[href="./login.html"]').style.display = "block";
   document.querySelector('a[href="./cadastro.html"]').style.display = "block";
@@ -89,4 +89,15 @@ window.onload = function () {
   });
 };
 
+// botão de busca
+const txtBusca = document.getElementById("txtBusca");
+const btnBusca = document.getElementById("btnBusca");
 
+btnBusca.addEventListener("click", function () {
+  const termoBusca = txtBusca.value.toLowerCase();
+  const produtosFiltrados = produtos.filter(function (produto) {
+    return produto.nome.toLowerCase().includes(termoBusca);
+  });
+  listaElemento.innerHTML = "";
+  renderizarLista(produtosFiltrados);
+});

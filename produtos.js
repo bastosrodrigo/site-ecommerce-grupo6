@@ -311,7 +311,21 @@ function renderizarItem(produto) {
                     <button class="carrinho" ><i class='bx bx-cart'></i></button>   
                 </div>
             </div>`;
-       
+
+    // só permite clicar no carrinho se estiver logado
+    const carrinhoBtn = divElemento.querySelector('.carrinho');
+    carrinhoBtn.addEventListener('click', function () {
+        if (!checaUsuarioLogado()) {
+            alert('Bem vindo! Faça login ou cadastre-se, para adicionar produtos ao carrinho.');
+            return;
+        }
+
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        carrinho.push(produto);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        window.location.href = "carrinho.html";
+    });
+
     return divElemento;
 }
 
