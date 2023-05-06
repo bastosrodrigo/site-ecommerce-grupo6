@@ -428,3 +428,14 @@ justify-content: center;
 #logoutBtn {
   margin-left: 20px;
 }
+
+.cart img{
+ height: 40px; 
+ margin-right: 50px;    
+}
+
+li a:hover{
+  color: #000000;
+  text-shadow: 0px 0px 7px rgba(0,0,0,1);
+  font-weight: bold;
+}

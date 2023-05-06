@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="shortcut icon" href="./src/logo-fanaticos.png" type="image/x-icon" />
     <script src="./script.js" defer></script>
-    <title>Página Inicial | FãNáticos</title>
+    <title>Política de Privacidade | FãNáticos</title>
 </head>
 <body>
     <div id="container">
@@ -44,50 +44,18 @@
         </header>
         <div id="barraPreta">
         </div>
-
-        <!-- Início do Slide-->
-        <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-                <img src="./src/img1.png" style="width:100%">
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-                <img src="./src/img2.png" style="width:100%">
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-                <img src="./src/img3.png" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
-                <img src="./src/img4.png" style="width:100%">
-        </div>
-  
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
-        <!--fim do Slide-->
-        <hr>
         <!--Início dos Produtos-->
-        <section class="produtos-tela-inicial">
-        <div class="texto-centro">
-            <h2>Mais Vendidos</h2>
-        </div>
-        <div class="produtos" id="lista"></div>
+        <section class="privacidade">
+            <h3>Política de Privacidade</h3><br>
+            <span>O FãNáticos respeita a sua privacidade porque garante o sigilo total das informações que você nos fornece. <br>
+                Fique tranquilo! O número do seu cartão de crédito é usado somente pelo Mercado Pago e apenas no processamento de compra, não sendo, de nenhuma forma, guardado nos arquivos depois da operação.<br>
+                Apenas dados como e-mail, nome e telefone são armazenados em nosso banco de dados com o intuito de melhorar o nosso relacionamento.<br>
+                O seu endereço de e-mail será utilizado unicamente para contato sobre seus pedidos ou divulgação de promoções e lançamentos do nosso site, podendo ser cancelado por você a qualquer momento.<br>
+                Em caso de dúvidas ou sugestões em relação à nossa política de privacidade, por favor, entre em contato pelo e-mail: contato@fanaticos.com.<br>
+                O FãNáticos garante a segurança de sua compra e respeita a sua privacidade. Temos o compromisso de sempre aprimorar nosso trabalho, assim divulgaremos publicamente quaisquer modificações nesta política de privacidade.<br>
+            </span>
         </section>
-        <hr>
+            <hr>
         <!--Fim -->
          <!-- Início do Contato -->
          <section class="contato">
@@ -130,6 +98,25 @@
         </div>
 
     </div>
-    <script src="./produtos.js"></script>
 </body>
+    <script>
+        document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+        function checaUsuarioLogado() {
+        return localStorage.getItem("idCliente") !== null;
+        }
+        if (checaUsuarioLogado()) {
+        document.getElementById("logado").setAttribute("style", "display:flex")
+        document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
+        document.querySelector('a[href="./login.html"]').style.display = "none";
+        document.querySelector('a[href="./cadastro.html"]').style.display = "none";
+        document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
+        document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
+        } else {
+        document.querySelector('.logado').style.display = "none";
+        document.querySelector('a[href="./login.html"]').style.display = "block";
+        document.querySelector('a[href="./cadastro.html"]').style.display = "block";
+        document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
+        document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
+        }
+    </script>
 </html>

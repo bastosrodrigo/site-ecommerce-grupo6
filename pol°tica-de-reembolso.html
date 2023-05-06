@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="shortcut icon" href="./src/logo-fanaticos.png" type="image/x-icon" />
     <script src="./script.js" defer></script>
-    <title>Página Inicial | FãNáticos</title>
+    <title>Política de Reembolso | FãNáticos</title>
 </head>
 <body>
     <div id="container">
@@ -44,53 +44,29 @@
         </header>
         <div id="barraPreta">
         </div>
-
-        <!-- Início do Slide-->
-        <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-                <img src="./src/img1.png" style="width:100%">
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-                <img src="./src/img2.png" style="width:100%">
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-                <img src="./src/img3.png" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
-                <img src="./src/img4.png" style="width:100%">
-        </div>
-  
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
-        <!--fim do Slide-->
-        <hr>
         <!--Início dos Produtos-->
-        <section class="produtos-tela-inicial">
-        <div class="texto-centro">
-            <h2>Mais Vendidos</h2>
-        </div>
-        <div class="produtos" id="lista"></div>
+        <section class="privacidade">
+            <h3>Política de Reembolso</h3><br>
+            <span>Na FãNáticos, nosso compromisso é com a sua satisfação.<br>
+                Nossa política de troca visa proporcionar ao cliente total segurança em relação aos produtos adquiridos em nossa loja.<br>
+                Os produtos gratuitos não são passíveis de troca em nenhuma circunstância.<br>
+                Todos nossos produtos possuem garantia contra defeitos de fabricação. Também realizamos trocas de produtos que vieram diferente daquele encomendado pelo cliente.<br>
+                Caso você receba um produto nosso com algum defeito de fabricação ou diferente do que você ordenou siga os seguintes passos para realizar a troca:<br>
+                1. Informe nossa equipe sobre o problema através de nosso e-mail, enviando fotos claras do produto com defeito ou do produto errado que você recebeu, no prazo de 3 dias após o recebimento. Atenção, não realizaremos trocas ou ressarcimentos após este prazo.<br>
+                2. A reclamação será analisada em no máximo 2 dias úteis. Constatado o problema, nossa equipe entrará em contato via e-mail instruindo como proceder com a troca ou a devolução do item (o custo de envio do produto para troca caso necessário é por conta do comprador).<br>
+                3. Feito isso, você poderá escolher uma das seguintes alternativas:<br>
+                • Receber o reembolso do valor pago<br>
+                • Receber um novo produto igual o encomendado<br>
+                • Receber um cupom com o valor do produto para utilizar em compras futuras<br>
+                Não realizaremos trocas de produtos de tamanho inadequado para o cliente:<br>
+                Disponibilizamos as medidas em centímetros de nossos produtos para não haver erro na escolha do tamanho. Segundo o Código de Defesa do Consumidor - Artigo 18, não existe a obrigação legal do lojista de realizar trocas por motivos de arrependimento do consumidor quanto à cor, tamanho, modelo, ou qualquer outra hipótese. O direito assegurado ao cliente pelo código de defesa do consumidor é o de realizar trocas apenas em caso de produtos com defeito.<br>
+                
+            </span>
         </section>
-        <hr>
+            <hr>
         <!--Fim -->
-         <!-- Início do Contato -->
-         <section class="contato">
+          <!-- Início do Contato -->
+          <section class="contato">
             <div class="info-contato">
                 <div class="info">
                     <img src="./src/logo-fanaticos.png" alt="logo-loja-fanaticos">
@@ -130,6 +106,25 @@
         </div>
 
     </div>
-    <script src="./produtos.js"></script>
 </body>
+    <script>
+        document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+        function checaUsuarioLogado() {
+        return localStorage.getItem("idCliente") !== null;
+        }
+        if (checaUsuarioLogado()) {
+        document.getElementById("logado").setAttribute("style", "display:flex")
+        document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
+        document.querySelector('a[href="./login.html"]').style.display = "none";
+        document.querySelector('a[href="./cadastro.html"]').style.display = "none";
+        document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
+        document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
+        } else {
+        document.querySelector('.logado').style.display = "none";
+        document.querySelector('a[href="./login.html"]').style.display = "block";
+        document.querySelector('a[href="./cadastro.html"]').style.display = "block";
+        document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
+        document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
+        }
+    </script>
 </html>

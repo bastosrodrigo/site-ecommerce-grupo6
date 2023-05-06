@@ -297,7 +297,7 @@ function renderizarItem(produto) {
     const divElemento = document.createElement("div");
     divElemento.innerHTML = `
             <div class="prod">
-                <a href="#"><img src="${produto.src}" alt=""></a>
+                <img src="${produto.src}" alt="">
                 <div class="estrelas">
                     <i class='${produto.estrela1}' ></i>
                     <i class='${produto.estrela2}' ></i>

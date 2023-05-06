@@ -39,6 +39,9 @@
                 <input type="text" id="txtBusca" placeholder="Buscar..." />
                 <img src="./src/lupa.png" id="btnBusca" alt="Buscar" />
             </div>
+            <div class="cart">
+                <a href="./carrinho.html"><img src="./src/shopping-cart.png" alt="Carrinho de compras"></a>
+            </div> 
         </header>
         <div id="barraPreta">
         </div>
@@ -102,5 +105,24 @@
         </div>
     </div>
 </body>
-
+<script>
+    document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+    function checaUsuarioLogado() {
+    return localStorage.getItem("idCliente") !== null;
+    }
+    if (checaUsuarioLogado()) {
+    document.getElementById("logado").setAttribute("style", "display:flex")
+    document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
+    document.querySelector('a[href="./login.html"]').style.display = "none";
+    document.querySelector('a[href="./cadastro.html"]').style.display = "none";
+    document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
+    document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
+    } else {
+    document.querySelector('.logado').style.display = "none";
+    document.querySelector('a[href="./login.html"]').style.display = "block";
+    document.querySelector('a[href="./cadastro.html"]').style.display = "block";
+    document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
+    document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
+    }
+</script>
 </html>
