@@ -10,6 +10,7 @@ const produtos = [
     estrela3: 'bx bxs-star',
     estrela4: 'bx bxs-star',
     estrela5: 'bx bxs-star-half',
+    qtd: 1,
     preco: "189,99"
   },
   {
@@ -22,6 +23,7 @@ const produtos = [
     estrela3: 'bx bxs-star',
     estrela4: 'bx bxs-star',
     estrela5: 'bx bxs-star-half',
+    qtd: 1,
     preco: "237,49"
   },
   {
@@ -34,6 +36,7 @@ const produtos = [
     estrela3: 'bx bxs-star',
     estrela4: 'bx bxs-star',
     estrela5: 'bx bxs-star-half',
+    qtd: 1,
     preco: "309,00"
   },
   {
@@ -46,6 +49,7 @@ const produtos = [
     estrela3: 'bx bxs-star',
     estrela4: 'bx bxs-star',
     estrela5: 'bx bxs-star-half',
+    qtd: 1,
     preco: "109,99"
   },
   {
@@ -58,6 +62,7 @@ const produtos = [
     estrela3: 'bx bxs-star',
     estrela4: 'bx bxs-star',
     estrela5: 'bx bxs-star-half',
+    qtd: 1,
     preco: "284,99"
   }
 ]
@@ -77,8 +82,9 @@ function renderizarItem(produto) {
                   <i class='${produto.estrela5}'></i>
               </div>
               <div class="preco">
-                  <h4>${produto.nome}<button id="carrinho"><i class='bx bx-cart'></i></button></h4>
-                  <p>${produto.preco}</p>
+                  <h4>${produto.nome}</h4>
+                  <p>R$ ${produto.preco}</p>
+                  <button class="carrinho"><i class='bx bx-cart'></i></button>
               </div>
           </div>`;
   return divElemento;
@@ -142,7 +148,7 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho'));
 /* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS */
 window.onload = function () {
   const listaElemento = document.getElementById("lista");
-  const carrinhoBtns = listaElemento.querySelectorAll("#carrinho");
+  const carrinhoBtns = listaElemento.querySelectorAll(".carrinho");
   let carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
   if (!carrinho) {

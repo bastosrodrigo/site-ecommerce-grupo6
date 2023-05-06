@@ -66,23 +66,11 @@ function logout() {
   checaUsuarioLogado();
 }
 
-
-/* APENAS PARA TESTES MOSTRAR NO CONSOLE OS MAPS */
-const idProdutos = produtos.map((produto) => produto.id);
-const nomesProdutos = produtos.map((produto) => produto.nome);
-const precoProdutos = produtos.map((produto) => produto.preco);
-const srcProdutos = produtos.map((produto) => produto.src);
-console.log(idProdutos, nomesProdutos, precoProdutos, srcProdutos); // mostra o array dos produtos depois deles serem gerados no window.onload
-
-
-
 // #### CÓDIGO PARA PEGAR OS PRODUTOS E ADICIONAR NO CARRINHO 
-// está adicionando mas quando abre carrinho.html fala que carrinho not defined
-
 /* FAZENDO OS BOTÕES DOS CARRINHOS CLICÁVEIS E ADICIONANDO PRODUTOS */
 window.onload = function () {
   const listaElemento = document.getElementById("lista");
-  const carrinhoBtns = listaElemento.querySelectorAll("#carrinho");
+  const carrinhoBtns = listaElemento.querySelectorAll(".carrinho");
   let carrinho = JSON.parse(localStorage.getItem('carrinho'));
 
   if (!carrinho) {
@@ -95,9 +83,6 @@ window.onload = function () {
       carrinho.push(produtoSelecionado);
   
       localStorage.setItem('carrinho', JSON.stringify(carrinho)); // para adicionar no localStorage e pegar no carrinho.html
-
-      console.log(carrinho); // para teste
-      console.log(produtoSelecionado) // para teste
 
       window.location.href = "carrinho.html"; // leva para a página do carrinho
     });

@@ -38,35 +38,93 @@ function logout() {
 
 // Pega o carrinho salvo no localStorage
 let carrinho = JSON.parse(localStorage.getItem('carrinho'));
- console.log(carrinho)
+console.log(carrinho)
 
- const produtosJSON = localStorage.getItem('produtos');
- const produtos = JSON.parse(produtosJSON);
- console.log(produtos)
+// produtos salvos no LocalStorage
+const produtosJSON = localStorage.getItem('produtos');
+const produtos = JSON.parse(produtosJSON);
+console.log(produtos)
 
 
 const listaElemento = document.getElementById("conteudo-carrinho");
+const produtosNoCarrinho = [];
 
 function renderizarItem(produto) {
-    const divElemento = document.createElement("div");
-    divElemento.innerHTML = `
+  if (produtosNoCarrinho.includes(produto.id)) {
+    return null;
+  }
+  produtosNoCarrinho.push(produto.id);
+
+  const divElemento = document.createElement("div");
+  divElemento.innerHTML = `
+    <div class="prod-carrinho">
     <img src="${produto.src}" alt="${produto.nome}">
     <div class="detalhes-do-carrinho">
     <div class="produto-nome">${produto.nome}</div>
-    <div class="produto-preço"> ${produto.preco}</div>
-    <input type="number" value="1" class="quantidade-carrinho">
+    <div class="produto-preco" id="produto-preco-${produto.id}"> ${parseFloat(produto.preco) * produto.qtd}</div>
+    <input type="number" value=${produto.qtd} id=${produto.nome.replace(/[^A-Z0-9]+/ig, "").toLowerCase()} class="quantidade-carrinho" min="0">
     </div>
-    <i class='bx bxs-trash remover-do-carrinho'></i>`;       
-    return divElemento;
+    <i class='bx bxs-trash remover-do-carrinho' onclick='excluirProduto(${produto.id})'></i> 
+    </div>`;
+  setTimeout(() => {
+    document.getElementById(produto.nome.replace(/[^A-Z0-9]+/ig, "").toLowerCase()).addEventListener("input", (e) => {
+      produto.qtd = e.target.value;
+      const soma = parseFloat(produto.preco) * produto.qtd;
+      document.getElementById(`produto-preco-${produto.id}`).innerText = "R$ " + soma;
+      calcularTotal();
+    })    
+  }, 1);
+  return divElemento;
 }
 
-function renderizarLista(conteudoCarrinho) {  
-    conteudoCarrinho.forEach(function (item) {
-        const divElemento = renderizarItem(item);
-        listaElemento.appendChild(divElemento);  
+function renderizarLista(conteudoCarrinho) {
+  const produtosParaRenderizar = conteudoCarrinho.filter((produto) => {
+    return !produtosNoCarrinho.includes(produto.id);
+  });
 
-           
-    });
+  produtosParaRenderizar.forEach(function (item) {
+    const divElemento = renderizarItem(item);
+    if (divElemento !== null) {
+      listaElemento.appendChild(divElemento);
+    }
+  });
 }
 
 renderizarLista(carrinho);
+
+function calcularTotal() {
+  const somaTotal = carrinho.reduce(function (total, produto) {
+    return total + (parseInt(produto.qtd) * parseFloat(produto.preco));
+  }, 0);
+  document.getElementById('preco-total').innerHTML = somaTotal;
+}
+
+
+function excluirProduto(id) {
+  
+  produtosNoCarrinho = produtosNoCarrinho.filter((produto) => produto !== id);
+  renderizarLista(carrinho.filter((produto) => produtosNoCarrinho.includes(produto.id)));
+  
+  
+  calcularTotal();
+
+
+}
+  // Como deletar: Retorna no filter apenas os que possuírem ID diferente do que vc clicou
+  
+
+function confirmarCompra() {
+  if (produtosNoCarrinho.length === 0) {
+    alert("Adicione itens no carrinho antes de confirmar!")
+    return;
+  }
+  const confirmacao = confirm("Tem certeza de que deseja prosseguir com a compra?");
+  if (confirmacao) {
+    alert("Compra realizada com sucesso!");
+    listaElemento.innerHTML = ""; // apagar produtos no carrinho
+    renderizarLista([]);
+  }
+  else {
+    return;
+  }
+}
