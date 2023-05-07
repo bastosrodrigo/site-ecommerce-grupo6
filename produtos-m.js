@@ -58,6 +58,14 @@ function checaUsuarioLogado() { // checa se usuario está logado quando abre, se
 return localStorage.getItem("idCliente") !== null;
 }
 
+// mostra carrinhoLogo apenas usuário logado
+const carrinhoImg = document.querySelector('.cart');
+if (checaUsuarioLogado()) {
+    carrinhoImg.style.display = "block";
+} else {
+  carrinhoImg.style.display = "none";
+}
+
 // checar usuario logado
 if (checaUsuarioLogado()) {
 // remove "display: none" da div logado

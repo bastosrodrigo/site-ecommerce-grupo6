@@ -6,6 +6,14 @@ function checaUsuarioLogado() { // checa se usuario está logado quando abre, se
   return localStorage.getItem("idCliente") !== null;
 }
 
+// mostra carrinhoLogo apenas usuário logado
+const carrinhoImg = document.querySelector('.cart');
+if (checaUsuarioLogado()) {
+    carrinhoImg.style.display = "block";
+} else {
+  carrinhoImg.style.display = "none";
+}
+
 // checar usuario logado
 if (checaUsuarioLogado()) {
   // remove "display: none" da div logado
@@ -62,10 +70,11 @@ function renderizarItem(produto) {
     <div class="detalhes-do-carrinho">
     <div class="produto-nome">${produto.nome}</div>
     <div class="produto-preco" id="produto-preco-${produto.id}"> ${parseFloat(produto.preco) * produto.qtd}</div>
-    <input type="number" value=${produto.qtd} id=${produto.nome.replace(/[^A-Z0-9]+/ig, "").toLowerCase()} class="quantidade-carrinho" min="0">
+    <input type="number" value=${produto.qtd} id=${produto.nome.replace(/[^A-Z0-9]+/ig, "").toLowerCase()} class="quantidade-carrinho" min="1">
     </div>
     <i class='bx bxs-trash remover-do-carrinho' id="btnLixeira" " ></i> 
     </div>`;
+    calcularTotal();
   setTimeout(() => {
     document.getElementById(produto.nome.replace(/[^A-Z0-9]+/ig, "").toLowerCase()).addEventListener("input", (e) => {
       produto.qtd = e.target.value;

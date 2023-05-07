@@ -93,6 +93,14 @@ function checaUsuarioLogado() { // checa se usuario está logado quando abre, se
   return localStorage.getItem("idCliente") !== null;
 }
 
+// mostra carrinhoLogo apenas usuário logado
+const carrinhoImg = document.querySelector('.cart');
+if (checaUsuarioLogado()) {
+    carrinhoImg.style.display = "block";
+} else {
+  carrinhoImg.style.display = "none";
+}
+
 // checar usuario logado
 if (checaUsuarioLogado()) {
   // remove "display: none" da div logado
@@ -107,7 +115,7 @@ if (checaUsuarioLogado()) {
   document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
   document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
 } else {
-  // adiciona o estilo "display: none" para o div Logado, mostra botão login e Criar conta
+  // adiciona estilo "display: none" para o div Logado, mostra botão login e Criar conta
   document.querySelector('.logado').style.display = "none";
   document.querySelector('a[href="./login.html"]').style.display = "block";
   document.querySelector('a[href="./cadastro.html"]').style.display = "block";
@@ -228,4 +236,15 @@ function logout() {
   checaUsuarioLogado();
 }
 
+// botão de busca
+const txtBusca = document.getElementById("txtBusca");
+const btnBusca = document.getElementById("btnBusca");
 
+btnBusca.addEventListener("click", function () {
+  const termoBusca = txtBusca.value.toLowerCase();
+  const produtos = produtos.filter(function (produto) {
+    return produto.nome.toLowerCase().includes(termoBusca);
+  });
+  listaElemento.innerHTML = "";
+  renderizarLista(produtos);
+});
