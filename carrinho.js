@@ -53,7 +53,6 @@ const produtosJSON = localStorage.getItem('produtos');
 const produtos = JSON.parse(produtosJSON);
 // console.log(produtos)
 
-
 const listaElemento = document.getElementById("conteudo-carrinho");
 const produtosNoCarrinho = [];
 
@@ -159,4 +158,48 @@ function confirmarCompra() {
   }
 }
 
+// filtra pelo pela categoria 
+const todosProdutos = produtos.filter(produto => produto.categoria);
+renderizarLista(todosProdutos);
+
+// botão de busca
+const txtBusca = document.getElementById("txtBusca");
+const btnBusca = document.getElementById("btnBusca");
+
+btnBusca.addEventListener("click", function () {
+  const termoBusca = txtBusca.value.toLowerCase();
+  const produtosFiltrados = produtos.filter(function (produto) {
+    return produto.nome.toLowerCase().includes(termoBusca);
+  });
+  listaElemento.innerHTML = "";
+  renderizarLista(produtosFiltrados);
+});
+
+// FUNÇÃO PARA MOSTRAR MENU HAMBURGER E VERIFICA USUARIO LOGADO
+function mostrarMenu(){
+  let menuMobile = document.querySelector('.mobile-menu');
+  let loginLink = document.getElementById('loginLink');
+  let logadoDiv = document.getElementById('logado');  
+  let logoutBtn = document.getElementById('m-logoutBtn');
+  let cadastroLink = document.getElementById('cadastroLink');
+  
+  if (checaUsuarioLogado()) {
+    loginLink.style.display = 'none';
+    cadastroLink.style.display = 'none';
+    logadoDiv.style.display = 'block';
+    document.getElementById("m-nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+    logoutBtn.addEventListener('click', logout);
+  } else {
+    loginLink.style.display = 'block';
+    cadastroLink.style.display = 'block';
+    logadoDiv.style.display = 'none';
+    logoutBtn.removeEventListener('click', logout);
+  }
+  
+  if (menuMobile.classList.contains('open')) {
+    menuMobile.classList.remove('open');
+  } else {
+    menuMobile.classList.add('open');
+  }
+}
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="./script.js" defer></script>
     <title>Sobre Nós | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -38,6 +40,29 @@
                 <input type="text" id="txtBusca" placeholder="Buscar..." />
                 <img src="./src/lupa.png" id="btnBusca" alt="Buscar" />
             </div>
+
+            <!-- MENU MOBILE que aparece quando reduz tela -->
+            <div class="mobile-menu-icon">
+                <button id="btnMostrarMenu" onclick="mostrarMenu()">
+                    <img src="src/menu-hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="m-menuprincipal">
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./masculino.html">Masculino</a></li>
+                    <li><a href="./feminino.html">Feminino</a></li>
+                    <li><a href="./infantil.html">Infantil</a></li>
+                    <ul class="m-login">
+                        <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                        <li id="logado">
+                            <span id="m-nomeCliente"></span>
+                            <button id="m-logoutBtn" onclick="logout()"><i class='bx bx-log-out'></i></button>
+                        </li>
+                        <li id="loginLink"><a href="./login.html">Login</a></li>
+                    </ul>
+                </ul>
+            </div>
         </header>
         <div id="barraPreta">
         </div>
@@ -45,12 +70,18 @@
         <section class="sobre-nos">
             <h3>Sobre Nós</h3><br>
             <span>Somos o <b>FãNáticos!</b> Uma comunidade de pais apaixonados e loucos por futebol.<br>
-                Nossa história provavelmente não é muito diferente da sua: somos pessoas que amam bola e adoramos encontrar os produtos do nosso time do coração!<br>
-                Começamos este site em apoio aos torcedores de todas as partes do Brasil, dando uma chance de compartilhar os produtos mais incríveis com você.<br>
-                Estamos muito felizes em ser uma das marcas online mais confiáveis ​​para todos os tipos de torcedores. Oferecemos produtos de qualidade! São os melhores do mercado!.<br>
+                Nossa história provavelmente não é muito diferente da sua: somos pessoas que amam bola e adoramos
+                encontrar os produtos do nosso time do coração!<br>
+                Começamos este site em apoio aos torcedores de todas as partes do Brasil, dando uma chance de
+                compartilhar os produtos mais incríveis com você.<br>
+                Estamos muito felizes em ser uma das marcas online mais confiáveis ​​para todos os tipos de torcedores.
+                Oferecemos produtos de qualidade! São os melhores do mercado!.<br>
                 Estamos honrados em ter você em nosso site! <br>
-                Sinta-se à vontade para entrar em contato conosco a qualquer momento, enviando um e-mail para <b>sac@fanaticos.com.br.</b><br>
-                Lembre-se de que só aceitamos pedidos em nosso site, não por telefone ou correio. :) E por último, mas não menos importante, se você tiver procurando por suporte ao cliente ou ajuda em relação a um pedido, consulte nossas Perguntas Frequentes ou entre em contato com nossa equipe de suporte!<br>
+                Sinta-se à vontade para entrar em contato conosco a qualquer momento, enviando um e-mail para
+                <b>sac@fanaticos.com.br.</b><br>
+                Lembre-se de que só aceitamos pedidos em nosso site, não por telefone ou correio. :) E por último, mas
+                não menos importante, se você tiver procurando por suporte ao cliente ou ajuda em relação a um pedido,
+                consulte nossas Perguntas Frequentes ou entre em contato com nossa equipe de suporte!<br>
                 É um prazer conhecê-lo e obrigado pela visita!<br>
                 Solicite um cupom de desconto!<br>
                 FãNáticos<br>
@@ -58,10 +89,10 @@
                 sac@fanaticos.com.br<br>
             </span>
         </section>
-            <hr>
+        <hr>
         <!--Fim -->
-         <!-- Início do Contato -->
-         <section class="contato">
+        <!-- Início do Contato -->
+        <section class="contato">
             <div class="info-contato">
                 <div class="info">
                     <img src="./src/logo-fanaticos.png" alt="logo-loja-fanaticos">
@@ -102,24 +133,25 @@
 
     </div>
 </body>
-    <script>
-        document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
-        function checaUsuarioLogado() {
+<script>
+    document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+    function checaUsuarioLogado() {
         return localStorage.getItem("idCliente") !== null;
-        }
-        if (checaUsuarioLogado()) {
+    }
+    if (checaUsuarioLogado()) {
         document.getElementById("logado").setAttribute("style", "display:flex")
         document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
         document.querySelector('a[href="./login.html"]').style.display = "none";
         document.querySelector('a[href="./cadastro.html"]').style.display = "none";
         document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
         document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
-        } else {
+    } else {
         document.querySelector('.logado').style.display = "none";
         document.querySelector('a[href="./login.html"]').style.display = "block";
         document.querySelector('a[href="./cadastro.html"]').style.display = "block";
         document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
         document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
-        }
-    </script>
+    }
+</script>
+
 </html>

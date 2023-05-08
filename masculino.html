@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="./produtos-m.js" defer></script>
     <title>Masculino | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -35,12 +37,37 @@
                 <li><img src="./src/add-user (1).png" alt="img-login"><a href="./cadastro.html">Criar Conta</a></li>
             </ul>
             <div id="divBusca">
-                <input type="text" id="txtBusca" placeholder="Buscar..."/>
-                <img src="./src/lupa.png" id="btnBusca" alt="Buscar"/>
+                <input type="text" id="txtBusca" placeholder="Buscar..." />
+                <img src="./src/lupa.png" id="btnBusca" alt="Buscar" />
             </div>
             <div class="cart">
                 <a href="./carrinho.html"><img src="./src/shopping-cart.png" alt="Carrinho de compras"></a>
-            </div> 
+            </div>
+
+            <!-- MENU MOBILE que aparece quando reduz tela -->
+            <div class="mobile-menu-icon">
+                <button id="btnMostrarMenu" onclick="mostrarMenu()">
+                    <img src="src/menu-hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="m-menuprincipal">
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./masculino.html">Masculino</a></li>
+                    <li><a href="./feminino.html">Feminino</a></li>
+                    <li><a href="./infantil.html">Infantil</a></li>
+                    <ul class="m-login">
+                        <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                        <li id="logado">
+                            <span id="m-nomeCliente"></span>
+                            <button id="m-logoutBtn" onclick="logout()"><i class='bx bx-log-out'></i></button>
+                        </li>
+                        <li id="loginLink"><a href="./login.html">Login</a></li>
+                        <li id="cadastroLink"><a href="./cadastro.html">Criar Conta</a></li>
+                        <li><a href="./carrinho.html">Ver Carrinho</a></li>
+                    </ul>
+                </ul>
+            </div>
         </header>
         <div id="barraPreta">
         </div>
@@ -51,7 +78,7 @@
             </div>
             <div class="produtos" id="lista"></div>
         </section>
-            <hr>
+        <hr>
         <!--Fim -->
         <!-- Início do Contato -->
         <section class="contato">
@@ -95,4 +122,5 @@
 
     </div>
 </body>
+
 </html>

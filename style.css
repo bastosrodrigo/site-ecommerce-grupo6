@@ -1,29 +1,28 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing:border-box;
   font-family: 'Open Sans', sans-serif;
 }
 
 #container {
    background-color: #cfcfce; 
-   /* background-image: url(./src/background.png); 
-   background-position: center;
-   background-repeat: no-repeat; */
+   width: 100%;
+   
 }
 header{
 background: linear-gradient(to right, #81a6cc, #104f8f);
-width: 100%;
 height: 140px;
 display: flex;
+flex-direction: row;
 align-items: center;
-justify-content: space-between;
-padding: 20px 5%;
+justify-content: space-around;
+padding: 20px;
 }
 
 .logo img{
 max-width: 130px;
 height: auto;
-margin-left: 50px;
 transition: .4s;
 }
 
@@ -33,6 +32,7 @@ transform: scale(1.07);
 
 .menuprincipal{
 display: flex;
+gap: 20px;
 list-style-type: none;
 }
 
@@ -48,7 +48,7 @@ text-decoration: none;
 
 .menuprincipal a{
 font-size: 18px;
-margin: 20px;
+/* margin: 20px; */
 color: #f2f2f2;
 }
 
@@ -72,20 +72,19 @@ color: #f2f2f2;
 #barraPreta {
   height: 25px;
   background: linear-gradient(to top, rgba(255, 255, 255, 0), black);
-  /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
   margin-bottom: 50px;
 }
 
 /*- CAIXA DE PESQUISA -*/
-
 #divBusca{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
   background:linear-gradient(to right, #8baad4, #8baad4, #0c2c4c);
   border:solid 2px #0c2c4c;
   border-radius:15px;
   width:300px;
   height: 35px;
-  margin-right: 50px;
-  position: relative;
 }
 
 #txtBusca{
@@ -105,7 +104,6 @@ color: #f2f2f2;
   width: 27px;
   height: 27px;
   margin: 1px;
-  position: absolute;
   right: 5px;
   background-color: #92accc;
   border-radius: 9px;
@@ -118,16 +116,14 @@ color: #f2f2f2;
 }
 
 .cart img{
-  height: 40px;
-  margin-right: 50px;
-  
+  height: 40px;  
 }
 
 #bx {
   background-color: #0c2c4c;
 }
-/*- Menu -*/
 
+/*- Menu -*/
 .menu {
 display: flex;
 }
@@ -138,30 +134,94 @@ font-size: 16px;
 padding: 10px 20px;
 }
 
+/* deixa menu mobile escondido*/
+.mobile-menu-icon{
+  display:none;
+}
+
+.mobile-menu{
+  display: none;
+}
+
+/* mostra menu mobile quando atinge 730 px largura e esconde os outros*/
+@media screen and (max-width: 748px){
+
+   .menuprincipal, .login, #divBusca{
+    display: none;
+  }
+
+  .cart a{
+    display: none;
+  }
+
+  /* mostra menu hamburger */
+ .mobile-menu {
+  position: absolute;
+  top: 120px; /* altura do botão */
+  right: 80px;
+}
+  /* mostra icone */
+  .mobile-menu-icon{
+    display: block;
+  }
+
+  .mobile-menu-icon button{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-menu li{
+    padding: 6px;
+    background-color: rgb(47, 119, 182);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .mobile-menu .m-menuprincipal, .mobile-menu .m-login {
+    display: flex;
+    flex-direction: column;
+    align-self: center 
+  }
+
+  #m-nomeCliente{
+    font-size: 15px;
+    font-style: normal;
+  }
+
+  .mobile-menu .m-cart{
+    display: flex;   
+  }
+
+  .open { /* abre a lista do menu hamburger */
+    display: flex;    
+  }
+
+  .info-contato {
+    display: flex;  
+    flex-direction: column;   }
+}
+
+
+/* FIM MENU MOBILE*/
+
 /*- Slideshow -*/
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: auto;
 }
 
 .mySlides {
   display: none;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
 }
 
 .next {
@@ -177,17 +237,9 @@ padding: 10px 20px;
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
   bottom: 8px;
   width: 100%;
   text-align: center;
-}
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
 }
 
 .dot {
@@ -234,7 +286,7 @@ padding: 20px 7%;
 }
 
 .prod{
-position: relative;
+/* position: relative; */
 margin-left: 25px;
 margin-right: 25px;
 margin-bottom: 25px;
@@ -573,9 +625,9 @@ color: white;
 .prod-carrinho img{
 border-radius: 10px;
 }
-
-
 /* aqui termina o carrinho */
+
+
 /* Política de privacidade */
 .privacidade {
 margin: 100px;

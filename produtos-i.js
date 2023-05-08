@@ -24,25 +24,25 @@ function renderizarItem(produto) {
               </div>
           </div>`;
 
-           // só permite clicar no carrinho se estiver logado
-    const carrinhoBtn = divElemento.querySelector('.carrinho');
-    carrinhoBtn.addEventListener('click', function () {
-        if (!checaUsuarioLogado()) {
-            alert('Bem vindo! Faça login ou cadastre-se, para adicionar produtos ao carrinho.');
-            return;
-        }
+  // só permite clicar no carrinho se estiver logado
+  const carrinhoBtn = divElemento.querySelector('.carrinho');
+  carrinhoBtn.addEventListener('click', function () {
+    if (!checaUsuarioLogado()) {
+      alert('Bem vindo! Faça login ou cadastre-se, para adicionar produtos ao carrinho.');
+      return;
+    }
 
-        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-        carrinho.push(produto);
-        localStorage.setItem('carrinho', JSON.stringify(carrinho));
-        window.location.href = "carrinho.html";
-    });
-    
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    carrinho.push(produto);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    window.location.href = "carrinho.html";
+  });
+
   return divElemento;
 }
 
 function renderizarLista(lista) {
-  lista.forEach(function(item) {
+  lista.forEach(function (item) {
     const divElemento = renderizarItem(item);
     listaElemento.appendChild(divElemento);
   });
@@ -51,6 +51,19 @@ function renderizarLista(lista) {
 // filtra pelo pela categoria 
 const produtosInfantis = produtos.filter(produto => produto.categoria === 'infantil');
 renderizarLista(produtosInfantis);
+
+// botão de busca
+const txtBusca = document.getElementById("txtBusca");
+const btnBusca = document.getElementById("btnBusca");
+
+btnBusca.addEventListener("click", function () {
+  const termoBusca = txtBusca.value.toLowerCase();
+  const produtosFiltrados = produtos.filter(function (produto) {
+    return produto.nome.toLowerCase().includes(termoBusca);
+  });
+  listaElemento.innerHTML = "";
+  renderizarLista(produtosFiltrados);
+});
 
 /* #### javascript da loja #### */
 // Pega as informações da localStorage
@@ -63,7 +76,7 @@ function checaUsuarioLogado() { // checa se usuario está logado quando abre, se
 // mostra carrinhoLogo apenas usuário logado
 const carrinhoImg = document.querySelector('.cart');
 if (checaUsuarioLogado()) {
-    carrinhoImg.style.display = "block";
+  carrinhoImg.style.display = "block";
 } else {
   carrinhoImg.style.display = "none";
 }
@@ -101,17 +114,17 @@ window.onload = function () {
   if (!carrinho) {
     carrinho = [];
   }
-  
-  carrinhoBtns.forEach(function (btn,index) {
+
+  carrinhoBtns.forEach(function (btn, index) {
     btn.addEventListener("click", function () {
       const produtoSelecionado = produtos[index + 10] // pega ids dos infantis
       carrinho.push(produtoSelecionado);
-  
+
       localStorage.setItem('carrinho', JSON.stringify(carrinho)); // para adicionar no localStorage e pegar no carrinho.html
-    
+
       window.location.href = "carrinho.html"; // leva para a página do carrinho
-    });
-  });
+    });
+  });
 };
 
 // função para limpar a sessionStora e redireciona para o login
@@ -121,15 +134,32 @@ function logout() {
   checaUsuarioLogado();
 }
 
-// botão de busca
-const txtBusca = document.getElementById("txtBusca");
-const btnBusca = document.getElementById("btnBusca");
 
-btnBusca.addEventListener("click", function () {
-  const termoBusca = txtBusca.value.toLowerCase();
-  const produtosFiltrados = produtos.filter(function (produto) {
-    return produto.nome.toLowerCase().includes(termoBusca);
-  });
-  listaElemento.innerHTML = "";
-  renderizarLista(produtosFiltrados);
-});
+// FUNÇÃO PARA MOSTRAR MENU HAMBURGER E VERIFICA USUARIO LOGADO
+function mostrarMenu() {
+  let menuMobile = document.querySelector('.mobile-menu');
+  let loginLink = document.getElementById('loginLink');
+  let logadoDiv = document.getElementById('logado');
+  let logoutBtn = document.getElementById('m-logoutBtn');
+  let cadastroLink = document.getElementById('cadastroLink');
+
+  if (checaUsuarioLogado()) {
+    loginLink.style.display = 'none';
+    cadastroLink.style.display = 'none';
+    logadoDiv.style.display = 'block';
+    document.getElementById("m-nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+    logoutBtn.addEventListener('click', logout);
+  } else {
+    loginLink.style.display = 'block';
+    cadastroLink.style.display = 'block';
+    logadoDiv.style.display = 'none';
+    logoutBtn.removeEventListener('click', logout);
+  }
+
+  if (menuMobile.classList.contains('open')) {
+    menuMobile.classList.remove('open');
+  } else {
+    menuMobile.classList.add('open');
+  }
+}
+

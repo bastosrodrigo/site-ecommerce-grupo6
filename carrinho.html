@@ -41,14 +41,38 @@
             </div>
             <div class="cart">
                 <a href="./carrinho.html"><img src="./src/shopping-cart.png" alt="Carrinho de compras"></a>
-            </div> 
+            </div>
+
+            <!-- MENU MOBILE que aparece quando reduz tela -->
+            <div class="mobile-menu-icon">
+                <button id="btnMostrarMenu" onclick="mostrarMenu()">
+                    <img src="src/menu-hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="m-menuprincipal">
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./masculino.html">Masculino</a></li>
+                    <li><a href="./feminino.html">Feminino</a></li>
+                    <li><a href="./infantil.html">Infantil</a></li>
+                    <ul class="m-login">
+                        <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                        <li id="logado">
+                            <span id="m-nomeCliente"></span>
+                            <button id="m-logoutBtn" onclick="logout()"><i class='bx bx-log-out'></i></button>
+                        </li>
+                        <li id="loginLink"><a href="./login.html">Login</a></li>
+                        <li id="cadastroLink"><a href="./cadastro.html">Criar Conta</a></li>
+                    </ul>
+                </ul>
+            </div>
         </header>
         <div id="barraPreta">
         </div>
         <hr>
 
         <!--Início do Carrinho-->
-         <div class="carrinho-principal">
+        <div class="carrinho-principal">
             <h2 class="titulo-carrinho"><i class='bx bxs-cart ' id="icone-carrinho"></i>Meu Carrinho</h2>
 
             <div id="conteudo-carrinho"> </div>
@@ -64,7 +88,7 @@
         <div class="btnComprar"><button class="btnConfirma" onclick="confirmarCompra()">Confirmar compra</button></div>
         <div class="btnRetornarLoja"> <button class="btnRetornaLoja"
                 onclick="window.location.href = 'index.html';">Comprar mais
-                produtos 👍<i class='bx bx-store-alt btnHome' ></i></button></div>
+                produtos 👍<i class='bx bx-store-alt btnHome'></i></button></div>
         <!--Fim carrinho-->
         <hr>
 

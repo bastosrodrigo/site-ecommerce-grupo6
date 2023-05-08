@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="./script.js" defer></script>
     <title>Página Inicial | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -40,36 +42,51 @@
             </div>
             <div class="cart">
                 <a href="./carrinho.html"><img src="./src/shopping-cart.png" alt="Carrinho de compras"></a>
-            </div> 
+            </div>
+
+            <!-- MENU MOBILE que aparece quando reduz tela -->
+            <div class="mobile-menu-icon">
+                <button id="btnMostrarMenu" onclick="mostrarMenu()">
+                    <img src="src/menu-hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="m-menuprincipal">
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./masculino.html">Masculino</a></li>
+                    <li><a href="./feminino.html">Feminino</a></li>
+                    <li><a href="./infantil.html">Infantil</a></li>
+                    <ul class="m-login">
+                        <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                        <li id="logado">
+                            <span id="m-nomeCliente"></span>
+                            <button id="m-logoutBtn" onclick="logout()"><i class='bx bx-log-out'
+                                    id="btnLogout"></i></button>
+                        </li>
+                        <li id="loginLink"><a href="./login.html">Login</a></li>
+                        <li id="cadastroLink"><a href="./cadastro.html">Criar Conta</a></li>
+                        <li><a href="./carrinho.html">Ver Carrinho</a></li>
+                    </ul>
+                </ul>
+            </div>
         </header>
         <div id="barraPreta">
         </div>
 
         <!-- Início do Slide-->
         <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
+            <div class="mySlides fade">
                 <img src="./src/img1.png" style="width:100%">
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
+            </div>
+            <div class="mySlides fade">
                 <img src="./src/img2.png" style="width:100%">
-        </div>
-  
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
+            </div>
+            <div class="mySlides fade">
                 <img src="./src/img3.png" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 4</div>
+            </div>
+            <div class="mySlides fade">
                 <img src="./src/img4.png" style="width:100%">
-        </div>
-  
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
         </div>
         <br>
         <div style="text-align:center">
@@ -82,15 +99,15 @@
         <hr>
         <!--Início dos Produtos-->
         <section class="produtos-tela-inicial">
-        <div class="texto-centro">
-            <h2>Mais Vendidos</h2>
-        </div>
-        <div class="produtos" id="lista"></div>
+            <div class="texto-centro">
+                <h2>Mais Vendidos</h2>
+            </div>
+            <div class="produtos" id="lista"></div>
         </section>
         <hr>
         <!--Fim -->
-         <!-- Início do Contato -->
-         <section class="contato">
+        <!-- Início do Contato -->
+        <section class="contato">
             <div class="info-contato">
                 <div class="info">
                     <img src="./src/logo-fanaticos.png" alt="logo-loja-fanaticos">
@@ -132,4 +149,5 @@
     </div>
     <script src="./produtos.js"></script>
 </body>
+
 </html>

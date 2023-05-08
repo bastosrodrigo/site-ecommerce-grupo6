@@ -27,6 +27,19 @@ function showSlides(n) {
 }
 
 
+// botão de busca
+const txtBusca = document.getElementById("txtBusca");
+const btnBusca = document.getElementById("btnBusca");
+
+btnBusca.addEventListener("click", function () {
+  const termoBusca = txtBusca.value.toLowerCase();
+  const produtosFiltrados = produtos.filter(function (produto) {
+    return produto.nome.toLowerCase().includes(termoBusca);
+  });
+  listaElemento.innerHTML = "";
+  renderizarLista(produtosFiltrados);
+});
+
 /* #### javascript da loja #### */
 // Pega as informações da localStorage
 document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
@@ -46,8 +59,8 @@ if (checaUsuarioLogado()) {
 // checar usuario logado
 if (checaUsuarioLogado()) {
   // remove "display: none" da div logado
-  document.getElementById("logado").setAttribute("style", "display:flex")
-  //  coloca nome do usuário no elemento "nomeCliente"
+  document.getElementById("logado").setAttribute("style", "display:flex");
+    //  coloca nome do usuário no elemento "nomeCliente"
   document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
 
   // esconde botões "Login" e Criar conta
@@ -97,15 +110,36 @@ window.onload = function () {
   });
 };
 
-// botão de busca
-const txtBusca = document.getElementById("txtBusca");
-const btnBusca = document.getElementById("btnBusca");
 
-btnBusca.addEventListener("click", function () {
-  const termoBusca = txtBusca.value.toLowerCase();
-  const produtosFiltrados = produtos.filter(function (produto) {
-    return produto.nome.toLowerCase().includes(termoBusca);
-  });
-  listaElemento.innerHTML = "";
-  renderizarLista(produtosFiltrados);
-});
+// FUNÇÃO PARA MOSTRAR MENU HAMBURGER E VERIFICA USUARIO LOGADO
+function mostrarMenu(){
+  let menuMobile = document.querySelector('.mobile-menu');
+  let loginLink = document.getElementById('loginLink');
+  let logadoDiv = document.getElementById('logado');  
+  let btnLogout = document.getElementById('btnLogout');
+  let logoutBtn = document.getElementById('m-logoutBtn');
+  let cadastroLink = document.getElementById('cadastroLink');
+  
+  if (checaUsuarioLogado()) {
+    loginLink.style.display = 'none';
+    cadastroLink.style.display = 'none';
+    logadoDiv.style.display = 'block';
+    btnLogout.style.display = 'block';
+    logoutBtn.style.display = 'block';
+    document.getElementById("m-nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+    logoutBtn.addEventListener('click', logout);
+  } else {
+    loginLink.style.display = 'block';
+    cadastroLink.style.display = 'block';
+    btnLogout.style.display = 'none';
+    logoutBtn.style.display = 'none';
+    logadoDiv.style.display = 'none';
+    logoutBtn.removeEventListener('click', logout);
+  }
+  
+  if (menuMobile.classList.contains('open')) {
+    menuMobile.classList.remove('open');
+  } else {
+    menuMobile.classList.add('open');
+  }
+}

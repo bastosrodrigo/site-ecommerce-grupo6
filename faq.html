@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="./script.js" defer></script>
     <title>FAQ - Perguntas Frequentes | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -38,6 +40,29 @@
                 <input type="text" id="txtBusca" placeholder="Buscar..." />
                 <img src="./src/lupa.png" id="btnBusca" alt="Buscar" />
             </div>
+
+            <!-- MENU MOBILE que aparece quando reduz tela -->
+            <div class="mobile-menu-icon">
+                <button id="btnMostrarMenu" onclick="mostrarMenu()">
+                    <img src="src/menu-hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="m-menuprincipal">
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./masculino.html">Masculino</a></li>
+                    <li><a href="./feminino.html">Feminino</a></li>
+                    <li><a href="./infantil.html">Infantil</a></li>
+                    <ul class="m-login">
+                        <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                        <li id="logado">
+                            <span id="m-nomeCliente"></span>
+                            <button id="m-logoutBtn" onclick="logout()"><i class='bx bx-log-out'></i></button>
+                        </li>
+                        <li id="loginLink"><a href="./login.html">Login</a></li>
+                    </ul>
+                </ul>
+            </div>
         </header>
         <div id="barraPreta">
         </div>
@@ -48,31 +73,40 @@
                 Sim, vendemos apenas camisas oficiais e licenciadas pelos times de futebol.<br>
                 <br>
                 <b>Quanto tempo leva para a minha camisa chegar?</b><br>
-                O tempo de entrega depende da sua localização e do método de envio escolhido. Normalmente, levamos de 2 a 5 dias úteis para processar o pedido e depois o tempo de envio depende da sua localização. Você receberá um número de rastreamento para acompanhar o status do seu pedido.<br>
+                O tempo de entrega depende da sua localização e do método de envio escolhido. Normalmente, levamos de 2
+                a 5 dias úteis para processar o pedido e depois o tempo de envio depende da sua localização. Você
+                receberá um número de rastreamento para acompanhar o status do seu pedido.<br>
                 <br>
                 <b>Como posso pagar pela minha camisa?</b><br>
                 Aceitamos diversas formas de pagamento, incluindo cartão de crédito, débito e boleto bancário.<br>
                 <br>
                 <b>É possível trocar ou devolver minha camisa?</b><br>
-                Sim, aceitamos trocas e devoluções dentro de um prazo de 30 dias a partir da data de recebimento da camisa. A camisa deve estar em perfeito estado e com a etiqueta original intacta. Você pode entrar em contato com nosso atendimento ao cliente para iniciar o processo de troca ou devolução.<br>
+                Sim, aceitamos trocas e devoluções dentro de um prazo de 30 dias a partir da data de recebimento da
+                camisa. A camisa deve estar em perfeito estado e com a etiqueta original intacta. Você pode entrar em
+                contato com nosso atendimento ao cliente para iniciar o processo de troca ou devolução.<br>
                 <br>
                 <b>Qual é o tamanho certo para mim?</b><br>
-                Recomendamos que você consulte nossa tabela de tamanhos para escolher o tamanho correto da camisa. Se você tiver dúvidas sobre o tamanho, entre em contato com nosso atendimento ao cliente e teremos prazer em ajudá-lo.<br>
+                Recomendamos que você consulte nossa tabela de tamanhos para escolher o tamanho correto da camisa. Se
+                você tiver dúvidas sobre o tamanho, entre em contato com nosso atendimento ao cliente e teremos prazer
+                em ajudá-lo.<br>
                 <br>
                 <b>Vocês fazem entregas internacionais?</b><br>
-                Sim, fazemos entregas para diversos países ao redor do mundo. O tempo de entrega pode variar dependendo do país de destino.<br>
+                Sim, fazemos entregas para diversos países ao redor do mundo. O tempo de entrega pode variar dependendo
+                do país de destino.<br>
                 <br>
                 <b>Posso personalizar minha camisa com um nome ou número?</b><br>
-                Sim, oferecemos serviço de personalização de camisas. Você pode escolher um nome e um número para serem estampados na camisa.<br>
+                Sim, oferecemos serviço de personalização de camisas. Você pode escolher um nome e um número para serem
+                estampados na camisa.<br>
                 <br>
                 <b>Vocês vendem camisas de times de futebol feminino?</b><br>
                 Sim, vendemos camisas de times de futebol masculino e feminino.<br>
                 <br>
                 <b>Como posso entrar em contato com o atendimento ao cliente?</b><br>
-                Você pode entrar em contato conosco por e-mail, telefone ou chat ao vivo em nosso site. Estamos disponíveis para ajudá-lo com qualquer dúvida ou problema que você possa ter.<br>
+                Você pode entrar em contato conosco por e-mail, telefone ou chat ao vivo em nosso site. Estamos
+                disponíveis para ajudá-lo com qualquer dúvida ou problema que você possa ter.<br>
             </span>
         </section>
-            <hr>
+        <hr>
         <!--Fim -->
         <!-- Início do Contato -->
         <section class="contato">
@@ -116,24 +150,25 @@
 
     </div>
 </body>
-    <script>
-        document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
-        function checaUsuarioLogado() {
+<script>
+    document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+    function checaUsuarioLogado() {
         return localStorage.getItem("idCliente") !== null;
-        }
-        if (checaUsuarioLogado()) {
+    }
+    if (checaUsuarioLogado()) {
         document.getElementById("logado").setAttribute("style", "display:flex")
         document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
         document.querySelector('a[href="./login.html"]').style.display = "none";
         document.querySelector('a[href="./cadastro.html"]').style.display = "none";
         document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
         document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
-        } else {
+    } else {
         document.querySelector('.logado').style.display = "none";
         document.querySelector('a[href="./login.html"]').style.display = "block";
         document.querySelector('a[href="./cadastro.html"]').style.display = "block";
         document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
         document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
-        }
-    </script>
+    }
+</script>
+
 </html>

@@ -1,39 +1,71 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing:border-box;
   font-family: 'Open Sans', sans-serif;
 }
 
 #container {
-  background-color: #cfcfce;
+   background-color: #cfcfce; 
+   width: 100%;
+   
 }
 header{
 background: linear-gradient(to right, #81a6cc, #104f8f);
-width: 100%;
 height: 140px;
 display: flex;
+flex-direction: row;
 align-items: center;
-justify-content: space-between;
-padding: 20px 5%;
+justify-content: space-around;
+padding: 20px;
 }
 
 .logo img{
 max-width: 130px;
 height: auto;
-margin-left: 50px;
+transition: .4s;
+}
+
+.logo img:hover{
+transform: scale(1.07);
 }
 
 .menuprincipal{
 display: flex;
+gap: 20px;
 list-style-type: none;
 }
+
+li a:hover{
+  color: #000000;
+  text-shadow: 0px 0px 7px rgba(0,0,0,1);
+  font-weight: bold;
+}
+
 li a{
 text-decoration: none;
 }
 
 .menuprincipal a{
 font-size: 18px;
-margin: 20px;
+/* margin: 20px; */
+color: #f2f2f2;
+}
+
+.login {
+list-style-type: none;
+}
+.login img{
+height: 18px;
+width: 18px;
+}
+.login a{
+margin: 15px;
+font-size: 18px;
+color: #f2f2f2;
+}
+.login i{
+font-size: 18px;
 color: #f2f2f2;
 }
 
@@ -44,15 +76,15 @@ color: #f2f2f2;
 }
 
 /*- CAIXA DE PESQUISA -*/
-
 #divBusca{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
   background:linear-gradient(to right, #8baad4, #8baad4, #0c2c4c);
   border:solid 2px #0c2c4c;
   border-radius:15px;
   width:300px;
   height: 35px;
-  margin-right: 50px;
-  position: relative;
 }
 
 #txtBusca{
@@ -72,15 +104,26 @@ color: #f2f2f2;
   width: 27px;
   height: 27px;
   margin: 1px;
-  position: absolute;
   right: 5px;
   background-color: #92accc;
   border-radius: 9px;
   padding: 2px;
   margin: 2px;
 }
-/*- Menu -*/
 
+#divBusca #btnBusca {
+  cursor: pointer;
+}
+
+.cart img{
+  height: 40px;  
+}
+
+#bx {
+  background-color: #0c2c4c;
+}
+
+/*- Menu -*/
 .menu {
 display: flex;
 }
@@ -91,127 +134,80 @@ font-size: 16px;
 padding: 10px 20px;
 }
 
-/*- Slideshow -*/
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+/* deixa menu mobile escondido*/
+.mobile-menu-icon{
+  display:none;
 }
 
-.mySlides {
+.mobile-menu{
   display: none;
 }
 
-.prev, .next {
-  cursor: pointer;
+/* mostra MENU MOBILE quando atinge 730 px largura e esconde os outros*/
+@media screen and (max-width: 748px){
+
+   .menuprincipal, .login, #divBusca{
+    display: none;
+  }
+
+  .cart a{
+    display: none;
+  }
+
+  /* mostra menu hamburger */
+ .mobile-menu {
   position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  top: 120px; /* altura do botão */
+  right: 80px;
 }
+  /* mostra icone */
+  .mobile-menu-icon{
+    display: block;
+  }
 
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+  .mobile-menu-icon button{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
+  .mobile-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
+  .mobile-menu li{
+    padding: 6px;
+    background-color: rgb(47, 119, 182);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .mobile-menu .m-menuprincipal, .mobile-menu .m-login {
+    display: flex;
+    flex-direction: column;
+    align-self: center 
+  }
 
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-  margin-bottom: 20px;
-}
+  #m-nomeCliente{
+    font-size: 15px;
+    font-style: normal;
+  }
 
-.active, .dot:hover {
-  background-color: #717171;
-}
+  .mobile-menu .m-cart{
+    display: flex;   
+  }
 
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+  .open { /* abre a lista do menu hamburger */
+    display: flex;    
+  }
 }
+/* FIM MENU MOBILE*/
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-/* - Fim Slideshow -*/
-
-.texto-centro h2{
-color: #111;
-font-size: 28px;
-text-transform: capitalize;
-text-align: center;
-margin-bottom: 30px;
-margin-top: 20px;
-}
-
-.produtos{
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, auto));
-gap: 2rem;
-
-}
-.prod{
-position: relative;
-margin-left: 25px;
-margin-right: 25px;
-margin-bottom: 25px;
-}
-.prod img{
-width: 100%;
-height: auto;
-border: 5px;
-border-radius: 15px;
-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-.preco h4{
-color: #111;
-font-size: 16px;
-text-transform: capitalize;
-font-weight: 400;
-}
-.preco p{
-color: #151515;
-font-size: 14px;
-font-weight: 600;
-}
 
 /* ############# AQUI DO FORMULARIO DE CADASTRO ###################*/
-
 /* Campos de entrada de dados */
 #nome, #cpf, #senha, #repetir-senha, #cep, #bairro, #localidade, #uf {
 width: 100%;
@@ -267,6 +263,11 @@ color: dodgerblue;
 .contato{
 background: linear-gradient(to right, #81a6cc, #104f8f);
 }
+
+.suport a{
+text-decoration: none;
+}
+
 .info-contato{
 display: flex;
 align-items: center;
@@ -311,7 +312,31 @@ color: black;
 text-transform: capitalize;
 }
 
-/*-----------------------------MENU LOGIN E SENHA-----------------------------*/
+#logado {
+font-size: 10px;
+}
+
+.bem-vindo {
+display: flex;
+}
+#logoutBtn {
+background-color: #0c2c4c00;
+border: #0c2c4c00;
+padding: 5px;
+transition: .4s;
+}
+  
+#logoutBtn:hover{
+transform: scale(1.20);
+}
+
+.bem-vindo h1{
+color: white;
+font-size: 16px;
+}
+
+
+/*-----------------------------MENU LOGIN.html E SENHA-----------------------------*/
 .login {
   list-style-type: none;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="./produtos-f.js" defer></script>
     <title>Feminino | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -35,12 +37,37 @@
                 <li><img src="./src/add-user (1).png" alt="img-login"><a href="./cadastro.html">Criar Conta</a></li>
             </ul>
             <div id="divBusca">
-                <input type="text" id="txtBusca" placeholder="Buscar..."/>
-                <img src="./src/lupa.png" id="btnBusca" alt="Buscar"/>
+                <input type="text" id="txtBusca" placeholder="Buscar..." />
+                <img src="./src/lupa.png" id="btnBusca" alt="Buscar" />
             </div>
             <div class="cart">
                 <a href="./carrinho.html"><img src="./src/shopping-cart.png" alt="Carrinho de compras"></a>
-            </div> 
+            </div>
+
+            <!-- MENU MOBILE que aparece quando reduz tela -->
+            <div class="mobile-menu-icon">
+                <button id="btnMostrarMenu" onclick="mostrarMenu()">
+                    <img src="src/menu-hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="m-menuprincipal">
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./masculino.html">Masculino</a></li>
+                    <li><a href="./feminino.html">Feminino</a></li>
+                    <li><a href="./infantil.html">Infantil</a></li>
+                    <ul class="m-login">
+                        <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                        <li id="logado">
+                            <span id="m-nomeCliente"></span>
+                            <button id="m-logoutBtn" onclick="logout()"><i class='bx bx-log-out'></i></button>
+                        </li>
+                        <li id="loginLink"><a href="./login.html">Login</a></li>
+                        <li id="cadastroLink"><a href="./cadastro.html">Criar Conta</a></li>
+                        <li><a href="./carrinho.html">Ver Carrinho</a></li>
+                    </ul>
+                </ul>
+            </div>
         </header>
         <div id="barraPreta">
         </div>
@@ -51,48 +78,49 @@
             </div>
             <div class="produtos" id="lista"></div>
         </section>
-            <hr>
+        <hr>
         <!--Fim -->
-       <!-- Início do Contato -->
-       <section class="contato">
-        <div class="info-contato">
-            <div class="info">
-                <img src="./src/logo-fanaticos.png" alt="logo-loja-fanaticos">
-                <p>Residência Serratec</p>
-                <p>Grupo 6</p>
-                <p>(24) 2222-2222</p>
-                <div class="social-icon">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-youtube'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+        <!-- Início do Contato -->
+        <section class="contato">
+            <div class="info-contato">
+                <div class="info">
+                    <img src="./src/logo-fanaticos.png" alt="logo-loja-fanaticos">
+                    <p>Residência Serratec</p>
+                    <p>Grupo 6</p>
+                    <p>(24) 2222-2222</p>
+                    <div class="social-icon">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-youtube'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                </div>
+                <div class="suport">
+                    <h4>Suporte</h4>
+                    <p><a href="./faq.html" class="href">FAQ - Perguntas Frequentes</a></p>
+                    <p><a href="./sobre-nos.html" class="href">Sobre nós</a></p>
+                    <p><a href="./política-de-privacidade.html" class="href">Política de privacidade</a></p>
+                    <p><a href="./política-de-reembolso.html" class="href">Política de reembolso</a></p>
+                    <p><a href="./política-de-frete.html" class="href">Política de frete</a></p>
+                </div>
+                <div class="atendimento">
+                    <h4>Central de Atendimento</h4>
+                    <h5>Horário de Atendimento:</h5>
+                    <p>Seg à Sex. 9:00h às 19:00h</p>
+                    <h5>Nosso WhatsApp:</h5>
+                    <p>(24) 98765-4321</p>
+                    <h5>Nosso E-mail:</h5>
+                    <p>suportefanaticos@email.com.br</p>
                 </div>
             </div>
-            <div class="suport">
-                <h4>Suporte</h4>
-                <p><a href="./faq.html" class="href">FAQ - Perguntas Frequentes</a></p>
-                <p><a href="./sobre-nos.html" class="href">Sobre nós</a></p>
-                <p><a href="./política-de-privacidade.html" class="href">Política de privacidade</a></p>
-                <p><a href="./política-de-reembolso.html" class="href">Política de reembolso</a></p>
-                <p><a href="./política-de-frete.html" class="href">Política de frete</a></p>
-            </div>
-            <div class="atendimento">
-                <h4>Central de Atendimento</h4>
-                <h5>Horário de Atendimento:</h5>
-                <p>Seg à Sex. 9:00h às 19:00h</p>
-                <h5>Nosso WhatsApp:</h5>
-                <p>(24) 98765-4321</p>
-                <h5>Nosso E-mail:</h5>
-                <p>suportefanaticos@email.com.br</p>
-            </div>
+        </section>
+        <!--Fim do Contato-->
+        <div class="rodape">
+            <p>Copyright © @2023. Todos os direitos reservados. Design grupo 6 - Serratec</p>
         </div>
-    </section>
-    <!--Fim do Contato-->
-    <div class="rodape">
-        <p>Copyright © @2023. Todos os direitos reservados. Design grupo 6 - Serratec</p>
-    </div>
 
     </div>
 </body>
+
 </html>

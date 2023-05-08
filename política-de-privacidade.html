@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="./script.js" defer></script>
     <title>Política de Privacidade | FãNáticos</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -38,24 +40,54 @@
                 <input type="text" id="txtBusca" placeholder="Buscar..." />
                 <img src="./src/lupa.png" id="btnBusca" alt="Buscar" />
             </div>
+
+            <!-- MENU MOBILE que aparece quando reduz tela -->
+            <div class="mobile-menu-icon">
+                <button id="btnMostrarMenu" onclick="mostrarMenu()">
+                    <img src="src/menu-hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="m-menuprincipal">
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./masculino.html">Masculino</a></li>
+                    <li><a href="./feminino.html">Feminino</a></li>
+                    <li><a href="./infantil.html">Infantil</a></li>
+                    <ul class="m-login">
+                        <!--######## APARECE APENAS QUANDO USUARIO ESTA LOGADO ##########-->
+                        <li id="logado">
+                            <span id="m-nomeCliente"></span>
+                            <button id="m-logoutBtn" onclick="logout()"><i class='bx bx-log-out'></i></button>
+                        </li>
+                        <li id="loginLink"><a href="./login.html">Login</a></li>
+                    </ul>
+                </ul>
+            </div>
         </header>
         <div id="barraPreta">
         </div>
         <!--Início dos Produtos-->
         <section class="privacidade">
             <h3>Política de Privacidade</h3><br>
-            <span>O FãNáticos respeita a sua privacidade porque garante o sigilo total das informações que você nos fornece. <br>
-                Fique tranquilo! O número do seu cartão de crédito é usado somente pelo Mercado Pago e apenas no processamento de compra, não sendo, de nenhuma forma, guardado nos arquivos depois da operação.<br>
-                Apenas dados como e-mail, nome e telefone são armazenados em nosso banco de dados com o intuito de melhorar o nosso relacionamento.<br>
-                O seu endereço de e-mail será utilizado unicamente para contato sobre seus pedidos ou divulgação de promoções e lançamentos do nosso site, podendo ser cancelado por você a qualquer momento.<br>
-                Em caso de dúvidas ou sugestões em relação à nossa política de privacidade, por favor, entre em contato pelo e-mail: contato@fanaticos.com.<br>
-                O FãNáticos garante a segurança de sua compra e respeita a sua privacidade. Temos o compromisso de sempre aprimorar nosso trabalho, assim divulgaremos publicamente quaisquer modificações nesta política de privacidade.<br>
+            <span>O FãNáticos respeita a sua privacidade porque garante o sigilo total das informações que você nos
+                fornece. <br>
+                Fique tranquilo! O número do seu cartão de crédito é usado somente pelo Mercado Pago e apenas no
+                processamento de compra, não sendo, de nenhuma forma, guardado nos arquivos depois da operação.<br>
+                Apenas dados como e-mail, nome e telefone são armazenados em nosso banco de dados com o intuito de
+                melhorar o nosso relacionamento.<br>
+                O seu endereço de e-mail será utilizado unicamente para contato sobre seus pedidos ou divulgação de
+                promoções e lançamentos do nosso site, podendo ser cancelado por você a qualquer momento.<br>
+                Em caso de dúvidas ou sugestões em relação à nossa política de privacidade, por favor, entre em contato
+                pelo e-mail: contato@fanaticos.com.<br>
+                O FãNáticos garante a segurança de sua compra e respeita a sua privacidade. Temos o compromisso de
+                sempre aprimorar nosso trabalho, assim divulgaremos publicamente quaisquer modificações nesta política
+                de privacidade.<br>
             </span>
         </section>
-            <hr>
+        <hr>
         <!--Fim -->
-         <!-- Início do Contato -->
-         <section class="contato">
+        <!-- Início do Contato -->
+        <section class="contato">
             <div class="info-contato">
                 <div class="info">
                     <img src="./src/logo-fanaticos.png" alt="logo-loja-fanaticos">
@@ -96,24 +128,25 @@
 
     </div>
 </body>
-    <script>
-        document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
-        function checaUsuarioLogado() {
+<script>
+    document.getElementById("nomeCliente").innerHTML = localStorage.getItem("nomeCliente");
+    function checaUsuarioLogado() {
         return localStorage.getItem("idCliente") !== null;
-        }
-        if (checaUsuarioLogado()) {
+    }
+    if (checaUsuarioLogado()) {
         document.getElementById("logado").setAttribute("style", "display:flex")
         document.querySelector('#nomeCliente').innerText = localStorage.getItem("nomeCliente");
         document.querySelector('a[href="./login.html"]').style.display = "none";
         document.querySelector('a[href="./cadastro.html"]').style.display = "none";
         document.querySelector('img[src="./src/user-interface.png"]').style.display = "none";
         document.querySelector('img[src="./src/add-user (1).png"]').style.display = "none";
-        } else {
+    } else {
         document.querySelector('.logado').style.display = "none";
         document.querySelector('a[href="./login.html"]').style.display = "block";
         document.querySelector('a[href="./cadastro.html"]').style.display = "block";
         document.querySelector('img[src="./src/user-interface.png"]').style.display = "block";
         document.querySelector('img[src="./src/add-user (1).png"]').style.display = "block";
-        }
-    </script>
+    }
+</script>
+
 </html>
